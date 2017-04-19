@@ -1,0 +1,65 @@
+<h2>Registrar Equipo</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <br><br>
+
+  <div class="field">
+    <%= f.label :Representante_del_equipo %><br />
+    <%= f.text_field :nombre, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :planta %><br />
+    <%= f.text_field :planta, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :departamento %><br />
+    <%= f.text_field :departamento, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :función %><br />
+    <%= f.text_field :funcion, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :enfoque %><br />
+    <%= f.select :enfoque, [["Reingeniería de diseño"], ["Reingeniería de proceso"], ["Nuevo producto"]], {:prompt => '¿Qué enfoque tiene el proyecto?'}, {:required => true}%>
+  </div>
+
+  <div class="field">
+    <%= f.label :división %><br />
+    <%= f.select :division, [["Window Regulator"], ["Door Module"], ["Latches"], ["Spindle"]], {:prompt => '¿A qué división pertenece?'}, {:required => true}%>
+  </div>
+
+<br><br>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "button button_red button_block" %>
+  </div>
+<% end %>
+
+<br>
+
+<%= render "devise/shared/links" %>
