@@ -6,41 +6,11 @@
     <br><br>
 
   <div class="field">
-    <%= f.label :Representante_del_equipo %><br />
-    <%= f.text_field :nombre, autofocus: true, :required => true %>
-  </div>
-
-  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :planta %><br />
-    <%= f.text_field :planta, autofocus: true, :required => true %>
-  </div>
 
-  <div class="field">
-    <%= f.label :departamento %><br />
-    <%= f.text_field :departamento, autofocus: true, :required => true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :función %><br />
-    <%= f.text_field :funcion, autofocus: true, :required => true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :enfoque %><br />
-    <%= f.select :enfoque, [["Reingeniería de diseño"], ["Reingeniería de proceso"], ["Nuevo producto"]], {:prompt => '¿Qué enfoque tiene el proyecto?'}, {:required => true}%>
-  </div>
-
-  <div class="field">
-    <%= f.label :división %><br />
-    <%= f.select :division, [["Window Regulator"], ["Door Module"], ["Latches"], ["Spindle"]], {:prompt => '¿A qué división pertenece?'}, {:required => true}%>
-  </div>
-
-<br><br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

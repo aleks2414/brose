@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'project/equipo'
+
   devise_for :teams
   get 'welcome/index'
 
