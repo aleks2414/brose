@@ -1,0 +1,60 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_proyecto %><br>
+    <%= f.text_field :nombre_proyecto %>
+  </div>
+  <div class="field">
+    <%= f.label :descripción_del_proyecto %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+
+<div class="field">
+    <%= f.label :Representante_del_equipo %><br />
+    <%= f.text_field :nombre_representante, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :planta %><br />
+    <%= f.text_field :planta, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :departamento %><br />
+    <%= f.text_field :departamento, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :función %><br />
+    <%= f.text_field :funcion, autofocus: true, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :enfoque %><br />
+    <%= f.select :enfoque, [["Reingeniería de diseño"], ["Reingeniería de proceso"], ["Nuevo producto"]], {:prompt => '¿Qué enfoque tiene el proyecto?'}, {:required => true}%>
+  </div>
+
+  <div class="field">
+    <%= f.label :división %><br />
+    <%= f.select :division, [["Window Regulator"], ["Door Module"], ["Latches"], ["Spindle"]], {:prompt => '¿A qué división pertenece?'}, {:required => true}%>
+  </div>
+
+  <div class="field">
+    <%= f.label :terminos %><br>
+    <%= f.check_box :terminos, :required => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "button button_red button_block" %>
+  </div>
+<% end %>

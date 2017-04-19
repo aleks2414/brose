@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_proyecto: MyString
+  descripcion: MyText
+  nombre_representante: MyString
+  planta: MyString
+  departamento: MyString
+  funcion: MyString
+  enfoque: MyString
+  division: MyString
+  terminos: false
+  user_id: 
+
+two:
+  nombre_proyecto: MyString
+  descripcion: MyText
+  nombre_representante: MyString
+  planta: MyString
+  departamento: MyString
+  funcion: MyString
+  enfoque: MyString
+  division: MyString
+  terminos: false
+  user_id: 

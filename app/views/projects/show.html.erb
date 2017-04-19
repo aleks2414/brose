@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre proyecto:</strong>
+  <%= @project.nombre_proyecto %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @project.descripcion %>
+</p>
+
+<p>
+  <strong>Nombre representante:</strong>
+  <%= @project.nombre_representante %>
+</p>
+
+<p>
+  <strong>Planta:</strong>
+  <%= @project.planta %>
+</p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= @project.departamento %>
+</p>
+
+<p>
+  <strong>Funcion:</strong>
+  <%= @project.funcion %>
+</p>
+
+<p>
+  <strong>Enfoque:</strong>
+  <%= @project.enfoque %>
+</p>
+
+<p>
+  <strong>Division:</strong>
+  <%= @project.division %>
+</p>
+
+<p>
+  <strong>Terminos:</strong>
+  <%= @project.terminos %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
