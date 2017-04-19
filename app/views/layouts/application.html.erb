@@ -5,10 +5,39 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://use.fontawesome.com/8e56b09395.js"></script>
 </head>
 <body>
 
+<div id="fondo">
+<div class="hidden-xs">
+<span class="img2"><%= image_tag ("r1.png")%></span>
+<span class="img3"><%= image_tag ("r2.png")%></span>
+<span class="img4"><%= image_tag ("r1.png")%></span>
+<span class="img5"><%= image_tag ("r3.png")%></span>
+<span class="img6"><%= image_tag ("r4.png")%></span>
+</div>
+</div>
+
+<% if alert %>
+	<p class="alert"><%= alert %></p>
+<% elsif notice %>
+	<p class="notice"><%= notice %></p>
+<% end %>
+
+
+
+<div class="container">
+<div class="col-md-8 col-md-offset-2">
+  <div id="formario">
+<%= image_tag ("brose.gif")%> <br> 
+<%= image_tag ("logo.gif")%>
 <%= yield %>
+<br>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
