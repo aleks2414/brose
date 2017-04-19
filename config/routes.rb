@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'terms/terms'
+
   resources :projects
   get 'project/equipo'
 

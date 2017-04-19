@@ -53,6 +53,7 @@
   <div class="field">
     <%= f.label :terminos %><br>
     <%= f.check_box :terminos, :required => true %>
+    <%= link_to "Acepto y firmo carta de confidencialidad", terms_terms_path %>
   </div>
   <div class="actions">
     <%= f.submit class: "button button_red button_block" %>
