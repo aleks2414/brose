@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420013816) do
+ActiveRecord::Schema.define(version: 20170420015452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,31 +28,28 @@ ActiveRecord::Schema.define(version: 20170420013816) do
 
   add_index "capitans", ["team_id"], name: "index_capitans_on_team_id", using: :btree
 
-  create_table "playmates", force: :cascade do |t|
+  create_table "players", force: :cascade do |t|
     t.string   "nombre"
     t.string   "departamento"
     t.string   "funcion"
     t.string   "planta"
+    t.string   "work"
     t.integer  "team_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  add_index "playmates", ["team_id"], name: "index_playmates_on_team_id", using: :btree
+  add_index "players", ["team_id"], name: "index_players_on_team_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "nombre_proyecto"
     t.text     "descripcion"
-    t.string   "nombre_representante"
-    t.string   "planta"
-    t.string   "departamento"
-    t.string   "funcion"
     t.string   "enfoque"
     t.string   "division"
     t.boolean  "terminos"
     t.integer  "team_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "projects", ["team_id"], name: "index_projects_on_team_id", using: :btree
@@ -77,6 +74,6 @@ ActiveRecord::Schema.define(version: 20170420013816) do
   add_index "teams", ["reset_password_token"], name: "index_teams_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "capitans", "teams"
-  add_foreign_key "playmates", "teams"
+  add_foreign_key "players", "teams"
   add_foreign_key "projects", "teams"
 end

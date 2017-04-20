@@ -16,6 +16,9 @@ class DashboardController < ApplicationController
   end
 
   def equipo
+    @players = Player.all
+    @playera  = current_team.players
+    @player = Player.new
   end
 
   def mentor

@@ -1,0 +1,37 @@
+<%= form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :departamento %><br>
+    <%= f.text_field :departamento %>
+  </div>
+  <div class="field">
+    <%= f.label :funcion %><br>
+    <%= f.text_field :funcion %>
+  </div>
+  <div class="field">
+    <%= f.label :planta %><br>
+    <%= f.text_field :planta %>
+  </div>
+  <div class="field">
+    <%= f.label :Alumno_o_colaborador %><br>
+    <%= f.select :work, [["Colaborador Brose"], ["Alumno"]], {:prompt => '¿Es colaborador o alumno?'}, {:required => true}%>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "button button_red button_block" %>
+  </div>
+<% end %>

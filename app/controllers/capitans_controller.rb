@@ -29,7 +29,7 @@ class CapitansController < ApplicationController
 
     respond_to do |format|
       if @capitan.save
-        format.html { redirect_to @capitan, notice: 'Capitan was successfully created.' }
+        format.html { redirect_to :back, notice: 'Capitan was successfully created.' }
         format.json { render :show, status: :created, location: @capitan }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class CapitansController < ApplicationController
   def update
     respond_to do |format|
       if @capitan.update(capitan_params)
-        format.html { redirect_to @capitan, notice: 'Capitan was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Capitan was successfully updated.' }
         format.json { render :show, status: :ok, location: @capitan }
       else
         format.html { render :edit }

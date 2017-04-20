@@ -1,0 +1,33 @@
+<% @playera.each do |player| %>
+
+<p>
+  <strong>Integrante # <%= player.id %>:</strong>
+  <%= player.nombre %>
+</p>
+
+<p>
+  <strong>departamento:</strong>
+  <%= player.departamento %>
+</p>
+
+
+<p>
+  <strong>Función:</strong>
+  <%= player.funcion %>
+</p>
+
+<p>
+  <strong>Planta:</strong>
+  <%= player.planta %>
+</p>
+
+<p>
+  <strong>Empleado o Alumno:</strong>
+  <%= player.work %>
+</p>
+
+<td><%= link_to 'Editar Integrante', edit_player_path(player) %></td> |
+<td><%= link_to 'Eliminar Integrante', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+<br><br>
+<% end %>

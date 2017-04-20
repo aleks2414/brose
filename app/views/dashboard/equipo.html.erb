@@ -1,2 +1,12 @@
-<h1>Dashboard#equipo</h1>
-<p>Find me in app/views/dashboard/equipo.html.erb</p>
+<%= render 'breadcrum' %>
+
+
+<% if current_team.admin? %>
+<% else %>
+	<% if current_team.players.present? %>
+		<%= render 'equipo' %>		
+		<%= render '../views/players/form' %>
+	<% else %>
+		<%= render '../views/players/form' %>
+	<% end %>
+<% end %>
