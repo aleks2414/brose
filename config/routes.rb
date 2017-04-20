@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
+  get 'dashboard/proyecto'
+
+  get 'dashboard/capitan'
+
+  get 'dashboard/equipo'
+
+  get 'dashboard/mentor'
+
+  get 'dashboard/reto'
+
+  get 'dashboard/ventajas_competitivas'
+
+  get 'dashboard/concepto_validado'
+
+  get 'dashboard/propuesta_de_valor'
+
+  get 'dashboard/prototipado'
+
   get 'terms/terms'
 
   resources :projects

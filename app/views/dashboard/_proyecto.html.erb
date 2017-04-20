@@ -1,0 +1,28 @@
+<% @projects.each do |project| %>
+
+<p>
+  <strong>Nombre proyecto:</strong>
+  <%= project.nombre_proyecto %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= project.descripcion %>
+</p>
+
+
+<p>
+  <strong>Enfoque:</strong>
+  <%= project.enfoque %>
+</p>
+
+<p>
+  <strong>Division:</strong>
+  <%= project.division %>
+</p>
+
+<td><%= link_to 'Editar Información', edit_project_path(project) %></td> |
+<td><%= link_to 'Eliminar Proyecto', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+<br><br>
+<% end %>
