@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  departamento: MyString
+  funcion: MyString
+  plata: MyString
+  team_id: 
+
+two:
+  nombre: MyString
+  departamento: MyString
+  funcion: MyString
+  plata: MyString
+  team_id: 

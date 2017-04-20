@@ -1,1 +1,11 @@
 <%= render 'breadcrum' %>
+
+
+<% if current_team.admin? %>
+<% else %>
+	<% if current_team.capitans.present? %>
+		<%= render 'capitans' %>		
+	<% else %>
+		<%= render '../views/capitans/form' %>
+	<% end %>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :capitans
   get 'dashboard/index'
 
   get 'dashboard/proyecto'

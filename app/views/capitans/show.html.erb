@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @capitan.nombre %>
+</p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= @capitan.departamento %>
+</p>
+
+<p>
+  <strong>Funcion:</strong>
+  <%= @capitan.funcion %>
+</p>
+
+<p>
+  <strong>Plata:</strong>
+  <%= @capitan.plata %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @capitan.team %>
+</p>
+
+<%= link_to 'Edit', edit_capitan_path(@capitan) %> |
+<%= link_to 'Back', capitans_path %>

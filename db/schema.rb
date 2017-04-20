@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419201721) do
+ActiveRecord::Schema.define(version: 20170420013816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "capitans", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "departamento"
+    t.string   "funcion"
+    t.string   "plata"
+    t.integer  "team_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "capitans", ["team_id"], name: "index_capitans_on_team_id", using: :btree
+
+  create_table "playmates", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "departamento"
+    t.string   "funcion"
+    t.string   "planta"
+    t.integer  "team_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "playmates", ["team_id"], name: "index_playmates_on_team_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "nombre_proyecto"
@@ -52,5 +76,7 @@ ActiveRecord::Schema.define(version: 20170419201721) do
   add_index "teams", ["email"], name: "index_teams_on_email", unique: true, using: :btree
   add_index "teams", ["reset_password_token"], name: "index_teams_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "capitans", "teams"
+  add_foreign_key "playmates", "teams"
   add_foreign_key "projects", "teams"
 end

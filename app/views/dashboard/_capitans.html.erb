@@ -1,0 +1,28 @@
+<% @capitana.each do |capitan| %>
+
+<p>
+  <strong>Nombre del Representante:</strong>
+  <%= capitan.nombre %>
+</p>
+
+<p>
+  <strong>departamento:</strong>
+  <%= capitan.departamento %>
+</p>
+
+
+<p>
+  <strong>Función:</strong>
+  <%= capitan.funcion %>
+</p>
+
+<p>
+  <strong>Planta:</strong>
+  <%= capitan.plata %>
+</p>
+
+<td><%= link_to 'Editar Información', edit_capitan_path(capitan) %></td> |
+<td><%= link_to 'Eliminar Proyecto', capitan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+<br><br>
+<% end %>

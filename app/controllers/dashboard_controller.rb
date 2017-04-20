@@ -10,6 +10,9 @@ class DashboardController < ApplicationController
   end
 
   def capitan
+    @captains = Capitan.all
+    @capitana  = current_team.capitans
+    @capitan = Capitan.new
   end
 
   def equipo
