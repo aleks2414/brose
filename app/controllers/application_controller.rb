@@ -10,16 +10,16 @@ def configure_permitted_parameters
   devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password) }
 end
 
-# def stored_location_for(resource)
-#   nil
-# end
+def stored_location_for(resource)
+  nil
+end
 
-# def after_sign_in_path_for(resource)
-#   	videos_path
-# end
+def after_sign_in_path_for(resource)
+  	dashboard_index_path
+end
 
-# def after_sign_up_path_for(resource)
-#     videos_path
-# end
+def after_sign_up_path_for(resource)
+    dashboard_index_path
+end
 
 end
