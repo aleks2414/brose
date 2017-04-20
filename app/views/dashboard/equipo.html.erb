@@ -4,9 +4,13 @@
 <% if current_team.admin? %>
 <% else %>
 	<% if current_team.players.present? %>
-		<%= render 'equipo' %>		
+		<%= render 'equipo' %>
+		<h3 class="center">Nuevo integrante</h3>		
+		<hr class="red">
 		<%= render '../views/players/form' %>
 	<% else %>
+	<h3 class="center">Nuevo integrante</h3>
+	<hr class="red">
 		<%= render '../views/players/form' %>
 	<% end %>
 <% end %>

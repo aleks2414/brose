@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   get 'dashboard/equipo'
 
-  get 'dashboard/mentor'
 
   get 'dashboard/reto'
 

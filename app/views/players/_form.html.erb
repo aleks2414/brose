@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :Alumno_o_colaborador %><br>
-    <%= f.select :work, [["Colaborador Brose"], ["Alumno"]], {:prompt => '¿Es colaborador o alumno?'}, {:required => true}%>
+    <%= f.select :work, [["Colaborador Brose"], ["Alumno"], ["Mentor"]], {:prompt => '¿Es colaborador, alumno o mentor?'}, {:required => true}%>
   </div>
   <div class="actions">
     <%= f.submit class: "button button_red button_block" %>

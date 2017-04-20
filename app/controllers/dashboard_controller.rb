@@ -21,8 +21,6 @@ class DashboardController < ApplicationController
     @player = Player.new
   end
 
-  def mentor
-  end
 
   def reto
   end

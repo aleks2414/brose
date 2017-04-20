@@ -1,32 +1,64 @@
+
+<div id="bread">
+<div class="row">
+<div class="col-md-12">
 <ul>
-	<li>
-		<%= link_to "Inicio", dashboard_index_path %>
-	</li>
-	<li>
-		<%= link_to "Capitán", dashboard_capitan_path %>
-	</li>
-	<li>
-		<%= link_to "Equipo", dashboard_equipo_path %>
-	</li>
-	<li>
-		<%= link_to "Mentor", dashboard_mentor_path %>
-	</li>
-	<li>
-		<%= link_to "Proyecto", dashboard_proyecto_path %>
-	</li>
-	<li>
-		<%= link_to "Reto", dashboard_reto_path %>
-	</li>
-	<li>
-		<%= link_to "Ventajas Competitivas", dashboard_ventajas_competitivas_path %>
-	</li>
-	<li>
-		<%= link_to "Concepto Validado", dashboard_concepto_validado_path %>
-	</li>
-	<li>
-		<%= link_to "Propuesta de Valor", dashboard_propuesta_de_valor_path %>
-	</li>
-	<li>
-		<%= link_to "Prototipado", dashboard_prototipado_path %>
-	</li>
+		<%= link_to dashboard_index_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_index_path) %> ">
+		<span class="fa fa-home"></span>
+			Inicio
+		</li>
+		<% end %>
+		<%= link_to dashboard_capitan_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_capitan_path) %> ">
+		<span class="fa fa-user"></span>
+			Representante
+		</li>
+		<% end %>
+		<%= link_to  dashboard_equipo_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_equipo_path) %> ">
+		<span class="fa fa-users"></span>
+			Equipo
+		</li>
+		<% end %>
+		<%= link_to  dashboard_proyecto_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_proyecto_path) %> ">
+		<span class="fa fa-paper-plane"></span>
+			Proyecto
+		</li>
+		<% end %>
+		<%= link_to  dashboard_reto_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_reto_path) %> ">
+		<span class="fa fa-hand-paper-o"></span>
+			Reto
+		</li>
+		<% end %>
+		<%= link_to  dashboard_ventajas_competitivas_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_ventajas_competitivas_path) %> ">
+		<span class="fa fa-bar-chart"></span>
+			Ventajas Competitivas
+		</li>
+		<% end %>
+		<%= link_to  dashboard_concepto_validado_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_concepto_validado_path) %> ">
+		<span class="fa fa-paperclip"></span>
+			Concepto Validado
+		</li>
+		<% end %>
+		<%= link_to  dashboard_propuesta_de_valor_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_propuesta_de_valor_path) %> ">
+		<span class="fa fa-file-text-o"></span>
+			Propuesta de Valor
+		</li>
+		<% end %>
+		<%= link_to  dashboard_prototipado_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_prototipado_path) %> ">
+		<span class="fa fa-bolt"></span>
+			Prototipado
+		</li>
+		<% end %>
 </ul>
+</div>
+</div>
+</div>
+
