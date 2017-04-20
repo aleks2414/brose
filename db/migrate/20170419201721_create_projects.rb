@@ -3,10 +3,6 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :nombre_proyecto
       t.text :descripcion
-      t.string :nombre_representante
-      t.string :planta
-      t.string :departamento
-      t.string :funcion
       t.string :enfoque
       t.string :division
       t.boolean :terminos
