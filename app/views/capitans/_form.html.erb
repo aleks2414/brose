@@ -24,8 +24,8 @@
     <%= f.text_field :funcion %>
   </div>
   <div class="field">
-    <%= f.label :plata %><br>
-    <%= f.text_field :plata %>
+    <%= f.label :planta %><br>
+        <%= f.select :plata, [["Brose Benito Juarez"], ["Brose El Marques"], ["Brose Aeropuerto"], ["Brose Puebla"]], {:prompt => '¿Es colaborador, alumno o mentor?'}, {:required => true}%>
   </div>
   <div class="actions">
     <%= f.submit class: "button button_red button_block" %>
