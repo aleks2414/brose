@@ -57,11 +57,34 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
+    <h4 class="red">Convocatoria</h4>
     <%= link_to '/Convocatoria.pdf' do %>
       <%= image_tag ("fondo1.png")%>
     <% end %>
     </div>
     <div class="col-sm-6">
+    <h4 class="red">¿Qué es Idea Lab?</h4>
+    <%= link_to '/Idealab.pdf' do %>
+      <%= image_tag ("fondo2.png")%>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+
+<% if current_page?(root_path) %>
+<div id="ppt">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+    <h4 class="red">Convocatoria</h4>
+    <%= link_to '/Convocatoria.pdf' do %>
+      <%= image_tag ("fondo1.png")%>
+    <% end %>
+    </div>
+    <div class="col-sm-6">
+    <h4 class="red">¿Qué es Idea Lab?</h4>
     <%= link_to '/Idealab.pdf' do %>
       <%= image_tag ("fondo2.png")%>
     <% end %>
