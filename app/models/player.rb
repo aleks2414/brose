@@ -6,7 +6,7 @@ validate :just_five_players, :on => :create
 
 protected  
 def just_five_players 
-	if team.players.count >= 4 
+	if team.players.count >= 5 
 	errors.add(:team_id, "El equipo ya tiene 5 integrantes") 
   end 
 end
