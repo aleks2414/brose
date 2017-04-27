@@ -6,4 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-b01= Team.create!({:email => "alex@brose.com", :password => "brose2016", :password_confirmation => "brose2016", :admin => true })
+b03= Team.create!({:email => "gabriela.morales@brose.com", :password => "brose2017", :password_confirmation => "brose2017", :admin => true })
+b02= Team.create!({:email => "marco.moreno@brose.com", :password => "brose2017", :password_confirmation => "brose2017", :admin => true })
+b04= Team.create!({:email => "karina.martinez@brose.com", :password => "brose2017", :password_confirmation => "brose2017", :admin => true })
