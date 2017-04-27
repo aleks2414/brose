@@ -1,3 +1,28 @@
+<% if current_team.admin? %>
+
+<div id="bread">
+<div class="row">
+<div class="col-md-12">
+<ul>
+		<%= link_to dashboard_index_path do %>
+		<li class="<%= 'activo' if current_page?(dashboard_index_path) %> ">
+		<span class="fa fa-home"></span>
+			Inicio
+		</li>
+		<% end %>
+		<%= link_to teams_path do %>
+		<li class="<%= 'activo' if current_page?(teams_path) %> ">
+		<span class="fa fa-users"></span>
+			Equipos
+		</li>
+		<% end %>
+</ul>
+</div>
+</div>
+</div>
+
+
+<% else %>
 
 <div id="bread">
 <div class="row">
@@ -61,4 +86,8 @@
 </div>
 </div>
 </div>
+
+<% end %>
+
+
 

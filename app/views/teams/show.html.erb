@@ -1,0 +1,62 @@
+<%= render '../views/dashboard/breadcrum' %>
+
+
+<div id="perfil">
+
+<h1>Equipo # <%= @team.id %></h1>
+
+
+<div id="cuadro">
+<h4 class="red upper">Proyecto</h4>
+<% @team.projects.each do |project| %>
+
+
+
+<p>
+  <strong>Nombre proyecto:</strong>
+  <%= project.nombre_proyecto %>
+</p>
+
+
+<td><%= link_to 'Ver Proyecto', project %></td> |
+
+<br><br>
+<% end %>
+
+</div>
+
+
+<div id="cuadro">
+<h4 class="red upper">Representante</h4>
+<% @team.capitans.each do |capitan| %>
+
+
+<p>
+  <strong>Nombre del Representante:</strong>
+  <%= capitan.nombre %>
+</p>
+
+<td><%= link_to 'Ver Representante', capitan %></td> |
+
+
+<br><br>
+<% end %>
+
+</div>
+
+
+<div id="cuadro">
+<h4 class="red upper">Equipo</h4>
+
+<% @team.players.each do |player| %>
+
+
+<p>
+  <strong>Integrante # <%= player.id %>:</strong>
+  <%= player.nombre %>
+</p>
+
+<% end %>
+</div>
+</div>
+<%= link_to 'Back', teams_path %>

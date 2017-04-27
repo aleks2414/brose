@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :teams
+  resources :teams
+
   resources :players
   resources :capitans
+
   get 'dashboard/index'
 
   get 'dashboard/proyecto'
@@ -25,7 +29,7 @@ Rails.application.routes.draw do
   resources :projects
   get 'project/equipo'
 
-  devise_for :teams
+  
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -4,8 +4,6 @@
 
 <% if current_team.admin? %>
 
-<%= render 'equipos' %>
-
 <% else %>
 	<% if current_team.projects.present? %>
 		<%= render 'proyecto' %>		

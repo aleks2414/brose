@@ -281,7 +281,16 @@ div.tab a:focus, .active {
 .red{
   color: $red;
 }
+.upper {
+  text-transform: uppercase;
+}
 
 #nuevo {
   margin-bottom: 3rem;
+}
+
+#cuadro {
+  padding: 12px;
+  border: solid 2px $red; 
+  margin-bottom: 20px;
 }
