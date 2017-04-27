@@ -4,19 +4,23 @@ class DashboardController < ApplicationController
   end
 
   def proyecto
-    @projects = Project.all
+    @teams = Team.where(admin: false).order("id asc")
+    @captains = Capitan.all.order("team_id asc")
+    @players = Player.all.order("team_id asc")
+    
+    @projects = Project.all.order("team_id asc")
     @projecta = current_team.projects
     @project = Project.new
   end
 
   def capitan
-    @captains = Capitan.all
+    @captains = Capitan.all.order("team_id asc")
     @capitana  = current_team.capitans
     @capitan = Capitan.new
   end
 
   def equipo
-    @players = Player.all
+    @players = Player.all.order("team_id asc")
     @playera  = current_team.players
     @player = Player.new
   end

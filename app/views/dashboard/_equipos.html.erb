@@ -1,0 +1,50 @@
+
+
+<% @teams.each do |team| %>
+
+<div id="nuevo">	
+
+<% team.projects.each do |project| %>
+
+<p>
+  <strong>Número de Equipo:</strong>
+  <%= project.team.id %>
+</p>
+
+<p>
+  <strong>Nombre proyecto:</strong>
+  <%= project.nombre_proyecto %>
+</p>
+
+
+<td><%= link_to 'Show', project %></td> |
+
+<br><br>
+<% end %>
+
+<% team.capitans.each do |capitan| %>
+
+<p>
+  <strong>Nombre del Representante:</strong>
+  <%= capitan.nombre %>
+</p>
+
+<td><%= link_to 'Show', capitan %></td> |
+
+
+<br><br>
+<% end %>
+
+<% team.players.each do |player| %>
+
+<p>
+  <strong>Integrante # <%= player.id %>:</strong>
+  <%= player.nombre %>
+</p>
+
+<% end %>
+
+</div>
+
+<% end %>
+
