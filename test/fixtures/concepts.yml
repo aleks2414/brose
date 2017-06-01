@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entrevistas: MyString
+  propuesta: MyString
+  boceto2: MyString
+  team_id: 
+
+two:
+  entrevistas: MyString
+  propuesta: MyString
+  boceto2: MyString
+  team_id: 

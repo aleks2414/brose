@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @third_review.team %>
+</p>
+
+<p>
+  <strong>Concept:</strong>
+  <%= @third_review.concept %>
+</p>
+
+<p>
+  <strong>Q10:</strong>
+  <%= @third_review.q10 %>
+</p>
+
+<p>
+  <strong>Q11:</strong>
+  <%= @third_review.q11 %>
+</p>
+
+<p>
+  <strong>Q12:</strong>
+  <%= @third_review.q12 %>
+</p>
+
+<%= link_to 'Edit', edit_third_review_path(@third_review) %> |
+<%= link_to 'Back', third_reviews_path %>

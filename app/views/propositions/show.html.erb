@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vpd:</strong>
+  <%= @proposition.vpd %>
+</p>
+
+<p>
+  <strong>Video pitch:</strong>
+  <%= @proposition.video_pitch %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @proposition.team %>
+</p>
+
+<%= link_to 'Edit', edit_proposition_path(@proposition) %> |
+<%= link_to 'Back', propositions_path %>

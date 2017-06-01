@@ -1,0 +1,29 @@
+<%= form_for(@third_review) do |f| %>
+  <% if @third_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@third_review.errors.count, "error") %> prohibited this third_review from being saved:</h2>
+
+      <ul>
+      <% @third_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :q10 %><br>
+    <%= f.number_field :q10 %>
+  </div>
+  <div class="field">
+    <%= f.label :q11 %><br>
+    <%= f.number_field :q11 %>
+  </div>
+  <div class="field">
+    <%= f.label :q12 %><br>
+    <%= f.number_field :q12 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

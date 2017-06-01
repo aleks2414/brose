@@ -1,0 +1,12 @@
+<% @prototypea.each do |prototype| %>
+
+<p>
+  <strong>Video pitch2:</strong>
+  <%= prototype.video_pitch2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_prototype_path(prototype) %> |
+<%= link_to 'Back', prototypes_path %>
+
+<% end %>

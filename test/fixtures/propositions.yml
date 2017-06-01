@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vpd: MyString
+  video_pitch: MyString
+  team_id: 
+
+two:
+  vpd: MyString
+  video_pitch: MyString
+  team_id: 

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @first_review.team %>
+</p>
+
+<p>
+  <strong>Challenge:</strong>
+  <%= @first_review.challenge %>
+</p>
+
+<p>
+  <strong>Q1:</strong>
+  <%= @first_review.q1 %>
+</p>
+
+<p>
+  <strong>Q2:</strong>
+  <%= @first_review.q2 %>
+</p>
+
+<p>
+  <strong>Q3:</strong>
+  <%= @first_review.q3 %>
+</p>
+
+<p>
+  <strong>Q4:</strong>
+  <%= @first_review.q4 %>
+</p>
+
+<p>
+  <strong>Q5:</strong>
+  <%= @first_review.q5 %>
+</p>
+
+<p>
+  <strong>Q6:</strong>
+  <%= @first_review.q6 %>
+</p>
+
+<%= link_to 'Edit', edit_first_review_path(@first_review) %> |
+<%= link_to 'Back', first_reviews_path %>

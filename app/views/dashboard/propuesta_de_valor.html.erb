@@ -1,1 +1,10 @@
 <%= render 'breadcrum' %>
+
+<% if current_team.admin? %>
+<% else %>
+	<% if current_team.propositions.present? %>
+		<%= render 'propositions' %>		
+	<% else %>
+		<%= render '../views/propositions/form' %>
+	<% end %>
+<% end %>

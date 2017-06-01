@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  definicion: MyString
+  resumen: MyString
+  reto_innovacion: MyString
+  team_id: 
+
+two:
+  definicion: MyString
+  resumen: MyString
+  reto_innovacion: MyString
+  team_id: 

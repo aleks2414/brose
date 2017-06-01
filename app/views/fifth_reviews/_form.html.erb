@@ -1,0 +1,37 @@
+<%= form_for(@fifth_review) do |f| %>
+  <% if @fifth_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fifth_review.errors.count, "error") %> prohibited this fifth_review from being saved:</h2>
+
+      <ul>
+      <% @fifth_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :q16 %><br>
+    <%= f.number_field :q16 %>
+  </div>
+  <div class="field">
+    <%= f.label :q17 %><br>
+    <%= f.number_field :q17 %>
+  </div>
+  <div class="field">
+    <%= f.label :q18 %><br>
+    <%= f.number_field :q18 %>
+  </div>
+  <div class="field">
+    <%= f.label :q19 %><br>
+    <%= f.number_field :q19 %>
+  </div>
+  <div class="field">
+    <%= f.label :q20 %><br>
+    <%= f.number_field :q20 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

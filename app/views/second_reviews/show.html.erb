@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @second_review.team %>
+</p>
+
+<p>
+  <strong>Advantage:</strong>
+  <%= @second_review.advantage %>
+</p>
+
+<p>
+  <strong>Q7:</strong>
+  <%= @second_review.q7 %>
+</p>
+
+<p>
+  <strong>Q8:</strong>
+  <%= @second_review.q8 %>
+</p>
+
+<p>
+  <strong>Q9:</strong>
+  <%= @second_review.q9 %>
+</p>
+
+<%= link_to 'Edit', edit_second_review_path(@second_review) %> |
+<%= link_to 'Back', second_reviews_path %>

@@ -59,4 +59,159 @@
 <% end %>
 </div>
 </div>
+
+
+
+<div id="cuadro">
+	<h4 class="red upper">Reto(s) por resolver definido(s)</h4>
+<% @team.challenges.each do |challenge| %>
+
+<p>
+  <strong>Definicion:</strong>
+  <%= challenge.definicion %>
+</p>
+
+<p>
+  <strong>Resumen:</strong>
+  <%= challenge.resumen %>
+</p>
+
+<p>
+  <strong>Reto innovacion:</strong>
+  <%= challenge.reto_innovacion %>
+</p>
+
+<br><h5 class="red upper center">Calificación</h5>
+<hr>
+<% if challenge.first_reviews.present? %>
+<h4>Número de calificaciones</h4>
+<h5>Calificación promedio</h5>
+<%= render '../views/first_reviews/form' %>
+<% else %>
+<%= render '../views/first_reviews/form' %>
+<% end %>
+
+	<% end %>
+
+</div>
+
+
+<div id="cuadro">
+	<h4 class="red upper">Concepto definido con ventajas competitivas</h4>
+
+<% @team.advantages.each do |advantage| %>
+
+<p>
+  <strong>Boceto:</strong>
+  <%= advantage.boceto %>
+</p>
+
+<p>
+  <strong>Infografia:</strong>
+  <%= advantage.infografia %>
+</p>
+
+<br><h5 class="red upper center">Calificación</h5>
+<hr>
+<% if advantage.second_reviews.present? %>
+<h4>Número de calificaciones</h4>
+<h5>Calificación promedio</h5>
+<%= render '../views/second_reviews/form' %>
+<% else %>
+<%= render '../views/second_reviews/form' %>
+<% end %>
+
+<% end %>
+
+</div>
+
+
+<div id="cuadro">
+	<h4 class="red upper">Concepto validado</h4>
+
+<% @team.concepts.each do |concept| %>
+<p>
+  <strong>Entrevistas:</strong>
+  <%= concept.entrevistas %>
+</p>
+
+<p>
+  <strong>Propuesta:</strong>
+  <%= concept.propuesta %>
+</p>
+
+<p>
+  <strong>Boceto2:</strong>
+  <%= concept.boceto2 %>
+</p>
+
+<br><h5 class="red upper center">Calificación</h5>
+<hr>
+<% if concept.third_reviews.present? %>
+<h4>Número de calificaciones</h4>
+<h5>Calificación promedio</h5>
+<%= render '../views/third_reviews/form' %>
+<% else %>
+<%= render '../views/third_reviews/form' %>
+<% end %>
+
+
+<% end %>
+</div>
+
+
+<div id="cuadro">
+	<h4 class="red upper">Propuesta de valor final</h4>
+<% @team.propositions.each do |proposition| %>
+
+<p>
+  <strong>Vpd:</strong>
+  <%= proposition.vpd %>
+</p>
+
+<p>
+  <strong>Video pitch:</strong>
+  <%= proposition.video_pitch %>
+</p>
+
+<br><h5 class="red upper center">Calificación</h5>
+<hr>
+<% if proposition.fourth_reviews.present? %>
+<h4>Número de calificaciones</h4>
+<h5>Calificación promedio</h5>
+<%= render '../views/fourth_reviews/form' %>
+<% else %>
+<%= render '../views/fourth_reviews/form' %>
+<% end %>
+
+
+<% end %>
+
+</div>
+
+
+<div id="cuadro">
+	<h4 class="red upper">Prototipo</h4>
+
+<% @team.prototypes.each do |prototype| %>
+
+<p>
+  <strong>Video pitch2:</strong>
+  <%= prototype.video_pitch2 %>
+</p>
+
+<br><h5 class="red upper center">Calificación</h5>
+<hr>
+<% if prototype.fifth_reviews.present? %>
+<h4>Número de calificaciones</h4>
+<h5>Calificación promedio</h5>
+<%= render '../views/fifth_reviews/form' %>
+<% else %>
+<%= render '../views/fifth_reviews/form' %>
+<% end %>
+
+<% end %>
+</div>
+
+
 <%= link_to 'Back', teams_path %>

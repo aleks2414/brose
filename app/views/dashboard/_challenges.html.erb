@@ -1,0 +1,22 @@
+<% @challengea.each do |challenge| %>
+
+<p>
+  <strong>Definicion:</strong>
+  <%= challenge.definicion %>
+</p>
+
+<p>
+  <strong>Resumen:</strong>
+  <%= challenge.resumen %>
+</p>
+
+<p>
+  <strong>Reto innovacion:</strong>
+  <%= challenge.reto_innovacion %>
+</p>
+
+
+<%= link_to 'Edit', edit_challenge_path(challenge) %> |
+<%= link_to 'Back', challenges_path %>
+
+<% end %>

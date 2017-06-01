@@ -1,0 +1,23 @@
+<% @concepta.each do |concept| %>
+
+<p>
+  <strong>Entrevistas:</strong>
+  <%= concept.entrevistas %>
+</p>
+
+<p>
+  <strong>Propuesta:</strong>
+  <%= concept.propuesta %>
+</p>
+
+<p>
+  <strong>Boceto2:</strong>
+  <%= concept.boceto2 %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_concept_path(concept) %> |
+<%= link_to 'Back', concepts_path %>
+
+<% end %>

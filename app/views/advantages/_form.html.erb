@@ -1,0 +1,26 @@
+<%= form_for(@advantage) do |f| %>
+  <% if @advantage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@advantage.errors.count, "error") %> prohibited this advantage from being saved:</h2>
+
+      <ul>
+      <% @advantage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :boceto %><br>
+    <%= f.text_field :boceto %>
+  </div>
+  <div class="field">
+    <%= f.label :infografia %><br>
+    <%= f.text_field :infografia %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

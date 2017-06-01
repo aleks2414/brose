@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team_id: 
+  proposition_id: 
+  q13: 1
+  q14: 1
+  q15: 1
+
+two:
+  team_id: 
+  proposition_id: 
+  q13: 1
+  q14: 1
+  q15: 1

@@ -1,0 +1,18 @@
+<% @propositiona.each do |proposition| %>
+
+<p>
+  <strong>Vpd:</strong>
+  <%= proposition.vpd %>
+</p>
+
+<p>
+  <strong>Video pitch:</strong>
+  <%= proposition.video_pitch %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_proposition_path(proposition) %> |
+<%= link_to 'Back', propositions_path %>
+
+<% end %>

@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :fifth_reviews
+  resources :fourth_reviews
+  resources :third_reviews
+  resources :second_reviews
+  resources :first_reviews
+  resources :prototypes
+  resources :propositions
+  resources :concepts
+  resources :advantages
+  resources :challenges do
+  end
   devise_for :teams
   resources :teams
 
