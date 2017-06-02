@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
+gem "figaro"
+gem "fog-aws"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
