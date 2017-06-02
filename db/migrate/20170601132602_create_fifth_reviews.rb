@@ -1,7 +1,6 @@
 class CreateFifthReviews < ActiveRecord::Migration
   def change
     create_table :fifth_reviews do |t|
-      t.references :team, index: true, foreign_key: true
       t.references :prototype, index: true, foreign_key: true
       t.integer :q16
       t.integer :q17

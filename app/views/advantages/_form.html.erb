@@ -13,11 +13,16 @@
 
   <div class="field">
     <%= f.label :boceto %><br>
-    <%= f.text_field :boceto %>
+    <%= (@advantage.boceto_url) if @advantage.boceto? %>
+    <%= f.file_field :boceto %>
+    <%= f.hidden_field :boceto_cache %>
   </div>
+
   <div class="field">
     <%= f.label :infografia %><br>
-    <%= f.text_field :infografia %>
+    <%= (@advantage.infografia_url) if @advantage.infografia? %>
+    <%= f.file_field :infografia %>
+    <%= f.hidden_field :boceto_cache %>
   </div>
 
   <div class="actions">

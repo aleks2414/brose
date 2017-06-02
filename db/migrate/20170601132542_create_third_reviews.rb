@@ -1,7 +1,6 @@
 class CreateThirdReviews < ActiveRecord::Migration
   def change
     create_table :third_reviews do |t|
-      t.references :team, index: true, foreign_key: true
       t.references :concept, index: true, foreign_key: true
       t.integer :q10
       t.integer :q11

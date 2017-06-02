@@ -1,4 +1,4 @@
-<%= form_for(@fourth_review) do |f| %>
+<%= form_for([@proposition,@fourth_review]) do |f| %>
   <% if @fourth_review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@fourth_review.errors.count, "error") %> prohibited this fourth_review from being saved:</h2>

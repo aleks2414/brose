@@ -13,7 +13,9 @@
 
   <div class="field">
     <%= f.label :vpd %><br>
-    <%= f.text_field :vpd %>
+    <%= (@concept.vpd) if @concept.vpd? %>
+    <%= f.file_field :vpd %>
+    <%= f.hidden_field :vpd_cache %>
   </div>
   <div class="field">
     <%= f.label :video_pitch %><br>

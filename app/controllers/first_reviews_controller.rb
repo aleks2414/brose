@@ -1,5 +1,7 @@
 class FirstReviewsController < ApplicationController
   before_action :set_first_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_challenge
+  
 
   # GET /first_reviews
   # GET /first_reviews.json
@@ -25,6 +27,7 @@ class FirstReviewsController < ApplicationController
   # POST /first_reviews.json
   def create
     @first_review = FirstReview.new(first_review_params)
+    @first_review.challenge_id = @challenge.id
 
     respond_to do |format|
       if @first_review.save
@@ -63,12 +66,17 @@ class FirstReviewsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_first_review
-      @first_review = FirstReview.find(params[:id])
+      @first_review = First_reviews.find(params[:id])
+    end
+
+    def set_challenge
+      @challenge = Challenge.find(params[:challenge_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def first_review_params
-      params.require(:first_review).permit(:team_id, :challenge_id, :q1, :q2, :q3, :q4, :q5, :q6)
+      params.require(:first_review).permit(:challenge_id, :q1, :q2, :q3, :q4, :q5, :q6)
     end
 end

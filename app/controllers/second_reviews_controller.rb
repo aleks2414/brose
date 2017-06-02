@@ -69,6 +69,6 @@ class SecondReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def second_review_params
-      params.require(:second_review).permit(:team_id, :advantage_id, :q7, :q8, :q9)
+      params.require(:second_review).permit(:advantage_id, :q7, :q8, :q9)
     end
 end

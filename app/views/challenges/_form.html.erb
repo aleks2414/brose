@@ -13,16 +13,25 @@
 
   <div class="field">
     <%= f.label :definicion %><br>
-    <%= f.text_field :definicion %>
+    <%= (@challenge.definicion_url) if @challenge.definicion? %>
+    <%= f.file_field :definicion %>
+    <%= f.hidden_field :definicion_cache %>
   </div>
+
   <div class="field">
     <%= f.label :resumen %><br>
-    <%= f.text_field :resumen %>
+    <%= (@challenge.resumen_url) if @challenge.resumen? %>
+    <%= f.file_field :resumen %>
+    <%= f.hidden_field :resumen_cache %>
   </div>
+
   <div class="field">
     <%= f.label :reto_innovacion %><br>
-    <%= f.text_field :reto_innovacion %>
+    <%= (@challenge.reto_innovacion_url) if @challenge.reto_innovacion? %>
+    <%= f.file_field :reto_innovacion %>
+    <%= f.hidden_field :reto_innovacion_cache %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

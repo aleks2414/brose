@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   add_index "concepts", ["team_id"], name: "index_concepts_on_team_id", using: :btree
 
   create_table "fifth_reviews", force: :cascade do |t|
-    t.integer  "team_id"
     t.integer  "prototype_id"
     t.integer  "q16"
     t.integer  "q17"
@@ -73,10 +72,8 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   end
 
   add_index "fifth_reviews", ["prototype_id"], name: "index_fifth_reviews_on_prototype_id", using: :btree
-  add_index "fifth_reviews", ["team_id"], name: "index_fifth_reviews_on_team_id", using: :btree
 
   create_table "first_reviews", force: :cascade do |t|
-    t.integer  "team_id"
     t.integer  "challenge_id"
     t.integer  "q1"
     t.integer  "q2"
@@ -89,10 +86,8 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   end
 
   add_index "first_reviews", ["challenge_id"], name: "index_first_reviews_on_challenge_id", using: :btree
-  add_index "first_reviews", ["team_id"], name: "index_first_reviews_on_team_id", using: :btree
 
   create_table "fourth_reviews", force: :cascade do |t|
-    t.integer  "team_id"
     t.integer  "proposition_id"
     t.integer  "q13"
     t.integer  "q14"
@@ -102,7 +97,6 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   end
 
   add_index "fourth_reviews", ["proposition_id"], name: "index_fourth_reviews_on_proposition_id", using: :btree
-  add_index "fourth_reviews", ["team_id"], name: "index_fourth_reviews_on_team_id", using: :btree
 
   create_table "players", force: :cascade do |t|
     t.string   "nombre"
@@ -150,7 +144,6 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   add_index "prototypes", ["team_id"], name: "index_prototypes_on_team_id", using: :btree
 
   create_table "second_reviews", force: :cascade do |t|
-    t.integer  "team_id"
     t.integer  "advantage_id"
     t.integer  "q7"
     t.integer  "q8"
@@ -160,7 +153,6 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   end
 
   add_index "second_reviews", ["advantage_id"], name: "index_second_reviews_on_advantage_id", using: :btree
-  add_index "second_reviews", ["team_id"], name: "index_second_reviews_on_team_id", using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -182,7 +174,6 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   add_index "teams", ["reset_password_token"], name: "index_teams_on_reset_password_token", unique: true, using: :btree
 
   create_table "third_reviews", force: :cascade do |t|
-    t.integer  "team_id"
     t.integer  "concept_id"
     t.integer  "q10"
     t.integer  "q11"
@@ -192,24 +183,18 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   end
 
   add_index "third_reviews", ["concept_id"], name: "index_third_reviews_on_concept_id", using: :btree
-  add_index "third_reviews", ["team_id"], name: "index_third_reviews_on_team_id", using: :btree
 
   add_foreign_key "advantages", "teams"
   add_foreign_key "capitans", "teams"
   add_foreign_key "challenges", "teams"
   add_foreign_key "concepts", "teams"
   add_foreign_key "fifth_reviews", "prototypes"
-  add_foreign_key "fifth_reviews", "teams"
   add_foreign_key "first_reviews", "challenges"
-  add_foreign_key "first_reviews", "teams"
   add_foreign_key "fourth_reviews", "propositions"
-  add_foreign_key "fourth_reviews", "teams"
   add_foreign_key "players", "teams"
   add_foreign_key "projects", "teams"
   add_foreign_key "propositions", "teams"
   add_foreign_key "prototypes", "teams"
   add_foreign_key "second_reviews", "advantages"
-  add_foreign_key "second_reviews", "teams"
   add_foreign_key "third_reviews", "concepts"
-  add_foreign_key "third_reviews", "teams"
 end

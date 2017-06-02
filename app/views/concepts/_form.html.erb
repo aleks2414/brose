@@ -13,16 +13,25 @@
 
   <div class="field">
     <%= f.label :entrevistas %><br>
-    <%= f.text_field :entrevistas %>
+    <%= (@concept.entrevistas_url) if @concept.entrevistas? %>
+    <%= f.file_field :entrevistas %>
+    <%= f.hidden_field :entrevistas_cache %>
   </div>
+
   <div class="field">
     <%= f.label :propuesta %><br>
-    <%= f.text_field :propuesta %>
+    <%= (@concept.propuesta_url) if @concept.propuesta? %>
+    <%= f.file_field :propuesta %>
+    <%= f.hidden_field :propuesta_cache %>
   </div>
+
   <div class="field">
     <%= f.label :boceto2 %><br>
-    <%= f.text_field :boceto2 %>
+    <%= (@concept.boceto2_url) if @concept.boceto2? %>
+    <%= f.file_field :boceto2 %>
+    <%= f.hidden_field :boceto2_cache %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

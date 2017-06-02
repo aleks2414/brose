@@ -1,7 +1,6 @@
 class CreateFirstReviews < ActiveRecord::Migration
   def change
     create_table :first_reviews do |t|
-      t.references :team, index: true, foreign_key: true
       t.references :challenge, index: true, foreign_key: true
       t.integer :q1
       t.integer :q2

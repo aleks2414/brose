@@ -69,16 +69,19 @@
 <p>
   <strong>Definicion:</strong>
   <%= challenge.definicion %>
+  <%= link_to "Download Definicion", definicion.attachment_url %>
 </p>
 
 <p>
   <strong>Resumen:</strong>
   <%= challenge.resumen %>
+  <%= link_to "Download Resumen", resumen.attachment_url %>
 </p>
 
 <p>
   <strong>Reto innovacion:</strong>
   <%= challenge.reto_innovacion %>
+  <%= link_to "Download Reto de Innovación", reto_innovacion.attachment_url %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -86,12 +89,13 @@
 <% if challenge.first_reviews.present? %>
 <h4>Número de calificaciones</h4>
 <h5>Calificación promedio</h5>
-<%= render '../views/first_reviews/form' %>
+
 <% else %>
-<%= render '../views/first_reviews/form' %>
+
+<%= link_to 'New Review', new_challenge_first_review_path(challenge, @first_review), :class => "btn btn-info" %>
 <% end %>
 
-	<% end %>
+<% end %>
 
 </div>
 
@@ -104,11 +108,13 @@
 <p>
   <strong>Boceto:</strong>
   <%= advantage.boceto %>
+  <%= link_to "Download Boceto 1", boceto.attachment_url %>
 </p>
 
 <p>
   <strong>Infografia:</strong>
   <%= advantage.infografia %>
+  <%= link_to "Download Infografía", infografia.attachment_url %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -116,9 +122,9 @@
 <% if advantage.second_reviews.present? %>
 <h4>Número de calificaciones</h4>
 <h5>Calificación promedio</h5>
-<%= render '../views/second_reviews/form' %>
+
 <% else %>
-<%= render '../views/second_reviews/form' %>
+<%= link_to 'New Review', new_advantage_second_review_path(advantage, @second_review), :class => "btn btn-info" %>
 <% end %>
 
 <% end %>
@@ -133,16 +139,19 @@
 <p>
   <strong>Entrevistas:</strong>
   <%= concept.entrevistas %>
+  <%= link_to "Download Entrevistas", entrevistas.attachment_url %>
 </p>
 
 <p>
   <strong>Propuesta:</strong>
   <%= concept.propuesta %>
+  <%= link_to "Download Propuesta", propuesta.attachment_url %>
 </p>
 
 <p>
   <strong>Boceto2:</strong>
   <%= concept.boceto2 %>
+  <%= link_to "Download Boceto 2", boceto2.attachment_url %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -150,9 +159,9 @@
 <% if concept.third_reviews.present? %>
 <h4>Número de calificaciones</h4>
 <h5>Calificación promedio</h5>
-<%= render '../views/third_reviews/form' %>
+<%= link_to 'New Review', new_concept_third_review_path(concept, @third_review), :class => "btn btn-info" %>
 <% else %>
-<%= render '../views/third_reviews/form' %>
+<%= link_to 'New Review', new_concept_third_review_path(concept, @third_review), :class => "btn btn-info" %>
 <% end %>
 
 
@@ -167,6 +176,7 @@
 <p>
   <strong>Vpd:</strong>
   <%= proposition.vpd %>
+  <%= link_to "Download Value proposition Design", vpd.attachment_url %>
 </p>
 
 <p>
@@ -179,9 +189,9 @@
 <% if proposition.fourth_reviews.present? %>
 <h4>Número de calificaciones</h4>
 <h5>Calificación promedio</h5>
-<%= render '../views/fourth_reviews/form' %>
+<%= link_to 'New Review', new_proposition_fourth_review_path(proposition, @fourth_review), :class => "btn btn-info" %>
 <% else %>
-<%= render '../views/fourth_reviews/form' %>
+<%= link_to 'New Review', new_proposition_fourth_review_path(proposition, @fourth_review), :class => "btn btn-info" %>
 <% end %>
 
 
@@ -205,9 +215,9 @@
 <% if prototype.fifth_reviews.present? %>
 <h4>Número de calificaciones</h4>
 <h5>Calificación promedio</h5>
-<%= render '../views/fifth_reviews/form' %>
+<%= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
 <% else %>
-<%= render '../views/fifth_reviews/form' %>
+<%= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
 <% end %>
 
 <% end %>
