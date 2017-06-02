@@ -69,19 +69,19 @@
 <p>
   <strong>Definicion:</strong>
   <%= challenge.definicion %>
-  <%= link_to "Download Definicion", definicion.attachment_url %>
+  <%= link_to "Download Definicion", challenge.definicion.url %>
 </p>
 
 <p>
   <strong>Resumen:</strong>
   <%= challenge.resumen %>
-  <%= link_to "Download Resumen", resumen.attachment_url %>
+  <%= link_to "Download Resumen", challenge.resumen.url %>
 </p>
 
 <p>
   <strong>Reto innovacion:</strong>
   <%= challenge.reto_innovacion %>
-  <%= link_to "Download Reto de Innovación", reto_innovacion.attachment_url %>
+  <%= link_to "Download Reto de Innovación", challenge.reto_innovacion.url %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -108,13 +108,13 @@
 <p>
   <strong>Boceto:</strong>
   <%= advantage.boceto %>
-  <%= link_to "Download Boceto 1", boceto.attachment_url %>
+  <%= link_to "Download Boceto 1", advantage.boceto.url %>
 </p>
 
 <p>
   <strong>Infografia:</strong>
   <%= advantage.infografia %>
-  <%= link_to "Download Infografía", infografia.attachment_url %>
+  <%= link_to "Download Infografía", advantage.infografia.url %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -139,19 +139,19 @@
 <p>
   <strong>Entrevistas:</strong>
   <%= concept.entrevistas %>
-  <%= link_to "Download Entrevistas", entrevistas.attachment_url %>
+  <%= link_to "Download Entrevistas", concept.entrevistas.url %>
 </p>
 
 <p>
   <strong>Propuesta:</strong>
   <%= concept.propuesta %>
-  <%= link_to "Download Propuesta", propuesta.attachment_url %>
+  <%= link_to "Download Propuesta", concept.propuesta.url %>
 </p>
 
 <p>
   <strong>Boceto2:</strong>
   <%= concept.boceto2 %>
-  <%= link_to "Download Boceto 2", boceto2.attachment_url %>
+  <%= link_to "Download Boceto 2", concept.boceto2.url %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -176,7 +176,7 @@
 <p>
   <strong>Vpd:</strong>
   <%= proposition.vpd %>
-  <%= link_to "Download Value proposition Design", vpd.attachment_url %>
+  <%= link_to "Download Value proposition Design", proposition.vpd.url %>
 </p>
 
 <p>
