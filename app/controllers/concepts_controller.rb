@@ -29,7 +29,7 @@ class ConceptsController < ApplicationController
 
     respond_to do |format|
       if @concept.save
-        format.html { redirect_to :back, notice: 'Concept was successfully created.' }
+        format.html { redirect_to dashboard_concepto_validado_path, notice: 'Concept was successfully created.' }
         format.json { render :show, status: :created, location: @concept }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ConceptsController < ApplicationController
   def update
     respond_to do |format|
       if @concept.update(concept_params)
-        format.html { redirect_to :back, notice: 'Concept was successfully updated.' }
+        format.html { redirect_to dashboard_concepto_validado_path, notice: 'Concept was successfully updated.' }
         format.json { render :show, status: :ok, location: @concept }
       else
         format.html { render :edit }

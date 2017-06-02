@@ -3,20 +3,23 @@
 <p>
   <strong>Definicion:</strong>
   <%= challenge.definicion %>
+  <%= link_to "Download Definicion", challenge.definicion.url %>
 </p>
 
 <p>
   <strong>Resumen:</strong>
   <%= challenge.resumen %>
+  <%= link_to "Download Resumen", challenge.resumen.url %>
 </p>
 
 <p>
   <strong>Reto innovacion:</strong>
   <%= challenge.reto_innovacion %>
+  <%= link_to "Download Reto de Innovación", challenge.reto_innovacion.url %>
 </p>
 
 
 <%= link_to 'Edit', edit_challenge_path(challenge) %> |
-<%= link_to 'Back', challenges_path %>
+
 
 <% end %>

@@ -29,7 +29,7 @@ class PropositionsController < ApplicationController
 
     respond_to do |format|
       if @proposition.save
-        format.html { redirect_to :back, notice: 'Proposition was successfully created.' }
+        format.html { redirect_to dashboard_propuesta_de_valor_path, notice: 'Proposition was successfully created.' }
         format.json { render :show, status: :created, location: @proposition }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PropositionsController < ApplicationController
   def update
     respond_to do |format|
       if @proposition.update(proposition_params)
-        format.html { redirect_to :back, notice: 'Proposition was successfully updated.' }
+        format.html { redirect_to dashboard_propuesta_de_valor_path, notice: 'Proposition was successfully updated.' }
         format.json { render :show, status: :ok, location: @proposition }
       else
         format.html { render :edit }

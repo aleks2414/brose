@@ -3,21 +3,24 @@
 <p>
   <strong>Entrevistas:</strong>
   <%= concept.entrevistas %>
+  <%= link_to "Download Entrevistas", concept.entrevistas.url %>
 </p>
 
 <p>
   <strong>Propuesta:</strong>
   <%= concept.propuesta %>
+  <%= link_to "Download Propuesta", concept.propuesta.url %>
 </p>
 
 <p>
   <strong>Boceto2:</strong>
   <%= concept.boceto2 %>
+  <%= link_to "Download Boceto2", concept.boceto2.url %>
 </p>
 
 
 
 <%= link_to 'Edit', edit_concept_path(concept) %> |
-<%= link_to 'Back', concepts_path %>
+
 
 <% end %>

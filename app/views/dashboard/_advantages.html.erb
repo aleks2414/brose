@@ -3,16 +3,18 @@
 <p>
   <strong>Boceto:</strong>
   <%= advantage.boceto %>
+  <%= link_to "Download Boceto", advantage.boceto.url %>
 </p>
 
 <p>
   <strong>Infografia:</strong>
   <%= advantage.infografia %>
+  <%= link_to "Download Infografía", advantage.infografia.url %>
 </p>
 
 
 <%= link_to 'Edit', edit_advantage_path(advantage) %> |
-<%= link_to 'Back', advantages_path %>
+
 
 
 <% end %>

@@ -29,7 +29,7 @@ class AdvantagesController < ApplicationController
 
     respond_to do |format|
       if @advantage.save
-        format.html { redirect_to :back, notice: 'Advantage was successfully created.' }
+        format.html { redirect_to dashboard_ventajas_competitivas_path, notice: 'Advantage was successfully created.' }
         format.json { render :show, status: :created, location: @advantage }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AdvantagesController < ApplicationController
   def update
     respond_to do |format|
       if @advantage.update(advantage_params)
-        format.html { redirect_to :back, notice: 'Advantage was successfully updated.' }
+        format.html { redirect_to dashboard_ventajas_competitivas_path, notice: 'Advantage was successfully updated.' }
         format.json { render :show, status: :ok, location: @advantage }
       else
         format.html { render :edit }

@@ -29,7 +29,7 @@ class PrototypesController < ApplicationController
 
     respond_to do |format|
       if @prototype.save
-        format.html { redirect_to :back, notice: 'Prototype was successfully created.' }
+        format.html { redirect_to dashboard_prototipado_path, notice: 'Prototype was successfully created.' }
         format.json { render :show, status: :created, location: @prototype }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PrototypesController < ApplicationController
   def update
     respond_to do |format|
       if @prototype.update(prototype_params)
-        format.html { redirect_to :back, notice: 'Prototype was successfully updated.' }
+        format.html { redirect_to dashboard_prototipado_path, notice: 'Prototype was successfully updated.' }
         format.json { render :show, status: :ok, location: @prototype }
       else
         format.html { render :edit }
