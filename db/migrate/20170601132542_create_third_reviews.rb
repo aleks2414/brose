@@ -3,9 +3,9 @@ class CreateThirdReviews < ActiveRecord::Migration
     create_table :third_reviews do |t|
       t.references :concept, index: true, foreign_key: true
       t.references :team, index: true, foreign_key: true
-      t.integer :q10
-      t.integer :q11
-      t.integer :q12
+      t.integer :q10, default: 0
+      t.integer :q11, default: 0
+      t.integer :q12, default: 0
 
       t.timestamps null: false
     end

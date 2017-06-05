@@ -63,13 +63,13 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   create_table "fifth_reviews", force: :cascade do |t|
     t.integer  "prototype_id"
     t.integer  "team_id"
-    t.integer  "q16"
-    t.integer  "q17"
-    t.integer  "q18"
-    t.integer  "q19"
-    t.integer  "q20"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "q16",          default: 0
+    t.integer  "q17",          default: 0
+    t.integer  "q18",          default: 0
+    t.integer  "q19",          default: 0
+    t.integer  "q20",          default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "fifth_reviews", ["prototype_id"], name: "index_fifth_reviews_on_prototype_id", using: :btree
@@ -78,14 +78,14 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   create_table "first_reviews", force: :cascade do |t|
     t.integer  "challenge_id"
     t.integer  "team_id"
-    t.integer  "q1"
-    t.integer  "q2"
-    t.integer  "q3"
-    t.integer  "q4"
-    t.integer  "q5"
-    t.integer  "q6"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "q1",           default: 0
+    t.integer  "q2",           default: 0
+    t.integer  "q3",           default: 0
+    t.integer  "q4",           default: 0
+    t.integer  "q5",           default: 0
+    t.integer  "q6",           default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "first_reviews", ["challenge_id"], name: "index_first_reviews_on_challenge_id", using: :btree
@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   create_table "fourth_reviews", force: :cascade do |t|
     t.integer  "proposition_id"
     t.integer  "team_id"
-    t.integer  "q13"
-    t.integer  "q14"
-    t.integer  "q15"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "q13",            default: 0
+    t.integer  "q14",            default: 0
+    t.integer  "q15",            default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "fourth_reviews", ["proposition_id"], name: "index_fourth_reviews_on_proposition_id", using: :btree
@@ -152,11 +152,11 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   create_table "second_reviews", force: :cascade do |t|
     t.integer  "advantage_id"
     t.integer  "team_id"
-    t.integer  "q7"
-    t.integer  "q8"
-    t.integer  "q9"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "q7",           default: 0
+    t.integer  "q8",           default: 0
+    t.integer  "q9",           default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "second_reviews", ["advantage_id"], name: "index_second_reviews_on_advantage_id", using: :btree
@@ -184,11 +184,11 @@ ActiveRecord::Schema.define(version: 20170601132602) do
   create_table "third_reviews", force: :cascade do |t|
     t.integer  "concept_id"
     t.integer  "team_id"
-    t.integer  "q10"
-    t.integer  "q11"
-    t.integer  "q12"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "q10",        default: 0
+    t.integer  "q11",        default: 0
+    t.integer  "q12",        default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "third_reviews", ["concept_id"], name: "index_third_reviews_on_concept_id", using: :btree

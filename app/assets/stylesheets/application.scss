@@ -294,3 +294,14 @@ div.tab a:focus, .active {
   border: solid 2px $red; 
   margin-bottom: 20px;
 }
+
+#textos {
+  p {
+    font-size: 15px;
+    text-align: justify;
+  }
+  h4 {
+    font-size: 45px;
+    margin-top: 40px;
+  }
+}

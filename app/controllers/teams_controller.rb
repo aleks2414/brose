@@ -11,11 +11,8 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @first_review = FirstReview.new
-    @second_review = SecondReview.new
-    @third_review = ThirdReview.new
-    @fourth_review = FourthReview.new
-    @fifth_review = FifthReview.new
+
+
   end
 
   # GET /teams/new
