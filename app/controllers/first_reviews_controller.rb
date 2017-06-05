@@ -46,7 +46,7 @@ class FirstReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @first_review.update(first_review_params)
-        format.html { redirect_to @first_review, notice: 'First review was successfully updated.' }
+        format.html { redirect_to team_path(@first_review.team_id), notice: 'First review was successfully updated.' }
         format.json { render :show, status: :ok, location: @first_review }
       else
         format.html { render :edit }

@@ -1,4 +1,4 @@
-<%= form_for([@concept,@third_review]) do |f| %>
+<%= form_for([@concept, @concept.third_reviews.build]) do |f| %>
   <% if @third_review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@third_review.errors.count, "error") %> prohibited this third_review from being saved:</h2>

@@ -1,5 +1,6 @@
 class FifthReviewsController < ApplicationController
   before_action :set_fifth_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_prototype
 
   # GET /fifth_reviews
   # GET /fifth_reviews.json
@@ -25,10 +26,12 @@ class FifthReviewsController < ApplicationController
   # POST /fifth_reviews.json
   def create
     @fifth_review = FifthReview.new(fifth_review_params)
+    @fifth_review.prototype_id = @prototype.id
+    @fifth_review.team_id = @prototype.team_id
 
     respond_to do |format|
       if @fifth_review.save
-        format.html { redirect_to @fifth_review, notice: 'Fifth review was successfully created.' }
+        format.html { redirect_to team_path(@fifth_review.team_id), notice: 'Fifth review was successfully created.' }
         format.json { render :show, status: :created, location: @fifth_review }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class FifthReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @fifth_review.update(fifth_review_params)
-        format.html { redirect_to @fifth_review, notice: 'Fifth review was successfully updated.' }
+        format.html { redirect_to team_path(@fifth_review.team_id), notice: 'Fifth review was successfully updated.' }
         format.json { render :show, status: :ok, location: @fifth_review }
       else
         format.html { render :edit }
@@ -65,6 +68,10 @@ class FifthReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_fifth_review
       @fifth_review = FifthReview.find(params[:id])
+    end
+
+    def set_prototype
+      @prototype = Prototype.find(params[:prototype_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

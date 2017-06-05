@@ -1,6 +1,6 @@
 class FourthReviewsController < ApplicationController
   before_action :set_fourth_review, only: [:show, :edit, :update, :destroy]
-
+ before_action :set_proposition
   # GET /fourth_reviews
   # GET /fourth_reviews.json
   def index
@@ -25,10 +25,12 @@ class FourthReviewsController < ApplicationController
   # POST /fourth_reviews.json
   def create
     @fourth_review = FourthReview.new(fourth_review_params)
+    @fourth_review.proposition_id = @proposition.id
+    @fourth_review.team_id = @proposition.team_id
 
     respond_to do |format|
       if @fourth_review.save
-        format.html { redirect_to @fourth_review, notice: 'Fourth review was successfully created.' }
+        format.html { redirect_to team_path(@fourth_review.team_id), notice: 'Fourth review was successfully created.' }
         format.json { render :show, status: :created, location: @fourth_review }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class FourthReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @fourth_review.update(fourth_review_params)
-        format.html { redirect_to @fourth_review, notice: 'Fourth review was successfully updated.' }
+        format.html { redirect_to team_path(@fourth_review.team_id), notice: 'Fourth review was successfully updated.' }
         format.json { render :show, status: :ok, location: @fourth_review }
       else
         format.html { render :edit }
@@ -65,6 +67,10 @@ class FourthReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_fourth_review
       @fourth_review = FourthReview.find(params[:id])
+    end
+
+    def set_proposition
+      @proposition = Proposition.find(params[:proposition_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

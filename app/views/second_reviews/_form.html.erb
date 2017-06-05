@@ -1,4 +1,4 @@
-<%= form_for([@advantage, @second_review]) do |f| %>
+<%= form_for([@advantage, @advantage.second_reviews.build]) do |f| %>
   <% if @second_review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@second_review.errors.count, "error") %> prohibited this second_review from being saved:</h2>

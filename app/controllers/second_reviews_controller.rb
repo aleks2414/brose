@@ -1,6 +1,6 @@
 class SecondReviewsController < ApplicationController
   before_action :set_second_review, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_advantage
   # GET /second_reviews
   # GET /second_reviews.json
   def index
@@ -25,10 +25,12 @@ class SecondReviewsController < ApplicationController
   # POST /second_reviews.json
   def create
     @second_review = SecondReview.new(second_review_params)
+    @second_review.advantage_id = @advantage.id
+    @second_review.team_id = @advantage.team_id
 
     respond_to do |format|
       if @second_review.save
-        format.html { redirect_to @second_review, notice: 'Second review was successfully created.' }
+        format.html { redirect_to team_path(@second_review.team_id), notice: 'Second review was successfully created.' }
         format.json { render :show, status: :created, location: @second_review }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class SecondReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @second_review.update(second_review_params)
-        format.html { redirect_to @second_review, notice: 'Second review was successfully updated.' }
+        format.html { redirect_to team_path(@second_review.team_id), notice: 'Second review was successfully updated.' }
         format.json { render :show, status: :ok, location: @second_review }
       else
         format.html { render :edit }
@@ -65,6 +67,10 @@ class SecondReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_second_review
       @second_review = SecondReview.find(params[:id])
+    end
+
+    def set_advantage
+      @advantage = Advantage.find(params[:advantage_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
