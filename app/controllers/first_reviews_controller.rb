@@ -28,10 +28,11 @@ class FirstReviewsController < ApplicationController
   def create
     @first_review = FirstReview.new(first_review_params)
     @first_review.challenge_id = @challenge.id
+    @first_review.team_id = @challenge.team_id
 
     respond_to do |format|
       if @first_review.save
-        format.html { redirect_to @first_review, notice: 'First review was successfully created.' }
+        format.html { redirect_to team_path(@first_review.team_id), notice: 'First review was successfully created.' }
         format.json { render :show, status: :created, location: @first_review }
       else
         format.html { render :new }
@@ -73,6 +74,10 @@ class FirstReviewsController < ApplicationController
 
     def set_challenge
       @challenge = Challenge.find(params[:challenge_id])
+    end
+
+    def set_team
+      @team = Team.find(params[:team_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

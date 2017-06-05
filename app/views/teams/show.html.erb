@@ -89,6 +89,7 @@
 <% if challenge.first_reviews.present? %>
 <h4>Número de calificaciones</h4>
 <h5>Calificación promedio</h5>
+<%= link_to 'New Review', new_challenge_first_review_path(challenge, @first_review), :class => "btn btn-info" %>
 
 <% else %>
 
