@@ -1,13 +1,13 @@
 class Team < ActiveRecord::Base
 
-	has_many :projects
-	has_many :capitans
-	has_many :players
-	has_many :challenges
-	has_many :advantages
-	has_many :concepts
-	has_many :propositions
-	has_many :prototypes
+	has_many :projects, dependent: :destroy
+	has_many :capitans, dependent: :destroy
+	has_many :players, dependent: :destroy
+	has_many :challenges, dependent: :destroy
+	has_many :advantages, dependent: :destroy
+	has_many :concepts, dependent: :destroy
+	has_many :propositions, dependent: :destroy
+	has_many :prototypes, dependent: :destroy
 
 	# has_many :first_reviews, through: :challenges, dependent: :destroy
 	# has_many :second_reviews, through: :advantages, dependent: :destroy
