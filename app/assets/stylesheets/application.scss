@@ -125,6 +125,17 @@ hr.red {
 
 }
 
+.button_grey {
+  color: $red;
+  background-color: white;
+  border: solid 1.5px $red;
+  &:hover {
+    color: white;
+    background-color: $red;
+  }
+
+}
+
 .button_block {
   display: block;
   margin: 0 auto;

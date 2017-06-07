@@ -63,25 +63,27 @@
 
 
 <div id="cuadro">
-	<h4 class="red upper">Reto(s) por resolver definido(s)</h4>
+<h3 class= "center upper red"> Etapa 1</h3>
+<hr>
+	<h4 class="red upper">Entender el Reto</h4>
 <% @team.challenges.each do |challenge| %>
 
 <p>
   <strong>Definicion:</strong>
   <%= challenge.definicion %>
-  <%= link_to "Download Definicion", challenge.definicion.url %>
+  <%= link_to "Descargar Definicion", challenge.definicion.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
   <strong>Resumen:</strong>
   <%= challenge.resumen %>
-  <%= link_to "Download Resumen", challenge.resumen.url %>
+  <%= link_to "Descargar Resumen", challenge.resumen.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
   <strong>Reto innovacion:</strong>
   <%= challenge.reto_innovacion %>
-  <%= link_to "Download Reto de Innovación", challenge.reto_innovacion.url %>
+  <%= link_to "Descargar Reto de Innovación", challenge.reto_innovacion.url, class: "button button_grey button_block" %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -114,20 +116,22 @@
 
 
 <div id="cuadro">
-	<h4 class="red upper">Concepto definido con ventajas competitivas</h4>
+<h3 class= "center upper red"> Etapa 2</h3>
+<hr>
+	<h4 class="red upper">Definición de Concepto</h4>
 
 <% @team.advantages.each do |advantage| %>
 
 <p>
   <strong>Boceto:</strong>
   <%= advantage.boceto %>
-  <%= link_to "Download Boceto 1", advantage.boceto.url %>
+  <%= link_to "Descargar Boceto 1", advantage.boceto.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
   <strong>Infografia:</strong>
   <%= advantage.infografia %>
-  <%= link_to "Download Infografía", advantage.infografia.url %>
+  <%= link_to "Descargar Infografía", advantage.infografia.url, class: "button button_grey button_block" %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -156,25 +160,27 @@
 
 
 <div id="cuadro">
-	<h4 class="red upper">Concepto validado</h4>
+<h3 class= "center upper red"> Etapa 3</h3>
+<hr>
+	<h4 class="red upper">Validación del Concepto</h4>
 
 <% @team.concepts.each do |concept| %>
 <p>
   <strong>Entrevistas:</strong>
   <%= concept.entrevistas %>
-  <%= link_to "Download Entrevistas", concept.entrevistas.url %>
+  <%= link_to "Descargar Entrevistas", concept.entrevistas.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
   <strong>Propuesta:</strong>
   <%= concept.propuesta %>
-  <%= link_to "Download Propuesta", concept.propuesta.url %>
+  <%= link_to "Descargar Propuesta", concept.propuesta.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
   <strong>Boceto2:</strong>
   <%= concept.boceto2 %>
-  <%= link_to "Download Boceto 2", concept.boceto2.url %>
+  <%= link_to "Descargar Boceto 2", concept.boceto2.url, class: "button button_grey button_block" %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
@@ -203,13 +209,15 @@
 
 
 <div id="cuadro">
+<h3 class= "center upper red"> Etapa 4</h3>
+<hr>
 	<h4 class="red upper">Propuesta de valor final</h4>
 <% @team.propositions.each do |proposition| %>
 
 <p>
   <strong>Vpd:</strong>
   <%= proposition.vpd %>
-  <%= link_to "Download Value proposition Design", proposition.vpd.url %>
+  <%= link_to "Descargar Value proposition Design", proposition.vpd.url , class: "button button_grey button_block"%>
 </p>
 
 <p>
@@ -243,35 +251,37 @@
 </div>
 
 
-<div id="cuadro">
-	<h4 class="red upper">Prototipo</h4>
+<!-- <div id="cuadro">
+<h3 class= "center upper red"> Etapa 5</h3>
+<hr>
+	<h4 class="red upper">Prototipado</h4>
 
-<% @team.prototypes.each do |prototype| %>
+<%# @team.prototypes.each do |prototype| %>
 
 <p>
   <strong>Video pitch2:</strong>
-  <%= prototype.video_pitch2 %>
+  <%#= prototype.video_pitch2 %>
 </p>
 
 <br><h5 class="red upper center">Calificación</h5>
 <hr>
-<% if prototype.fifth_reviews.present? %>
+<%# if prototype.fifth_reviews.present? %>
 
-<h4>Número de calificaciones: <%= prototype.fifth_reviews.count %></h4>
+<h4>Número de calificaciones: <%#= prototype.fifth_reviews.count %></h4>
 <h5>Calificación promedio
 
-  <%= @a = prototype.fifth_reviews.average(:q16).round(2) 
+  <%#= @a = prototype.fifth_reviews.average(:q16).round(2) 
       @total = @a
 
       @total %></h5>
 
-<%= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
-<% else %>
-<%= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
-<% end %>
+<%#= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
+<%# else %>
+<%#= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
+<%# end %>
 
-<% end %>
-</div>
+<%# end %>
+</div> -->
 
 
 <%= link_to 'Back', teams_path %>
