@@ -12,14 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :boceto %><br>
+    <%= f.label :Proceso_general %><br>
+    <h5>Subir un PDF, a modo de reporte, con 2 fotografías del resultado del proceso de ideación, 2 fotografías del resultado del proceso de filtrado, 2 fotografías del resultado del proceso de priorización y el contenido del boceto de idea. </h5>
     <%= (@advantage.boceto_url) if @advantage.boceto? %>
     <%= f.file_field :boceto %>
     <%= f.hidden_field :boceto_cache %>
   </div>
 
   <div class="field">
-    <%= f.label :infografia %><br>
+    <%= f.label :Protoripo_conceptual %><br>
+    <h5>De la opción que hayan decidido hacer, subir un archivo: 1) la infografía, 2) la presentación, 3) un documento con el link al video en una plataforma como YouTube, 4) Otro</h5>
     <%= (@advantage.infografia_url) if @advantage.infografia? %>
     <%= f.file_field :infografia %>
     <%= f.hidden_field :boceto_cache %>

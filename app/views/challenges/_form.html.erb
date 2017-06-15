@@ -12,27 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :definicion %><br>
+    <%= f.label :definicion_del_cliente %><br>
+    <h4>Subir un PDF con el contenido de la herramienta “Problema-oportunidad y usuario”. Deben ser los actores que eligieron (máximo 3)</h4>
     <%= (@challenge.definicion_url) if @challenge.definicion? %>
     <%= f.file_field :definicion %>
     <%= f.hidden_field :definicion_cache %>
   </div>
 
   <div class="field">
-    <%= f.label :resumen %><br>
+    <%= f.label :resumen_de_insights %><br>
+    <h4>Subir un PDF con el contenido de la herramienta “Resumen de insights”. Lo importante es que dejen claro cuál es el usuario que eligieron y qué insights generaron para entenderlo mejor y a sus problemas</h4>
     <%= (@challenge.resumen_url) if @challenge.resumen? %>
     <%= f.file_field :resumen %>
     <%= f.hidden_field :resumen_cache %>
   </div>
 
   <div class="field">
-    <%= f.label :reto_innovacion %><br>
+    <%= f.label :reto_de_innovación %><br>
+    <h4>Subir en un PDF su reto de innovación</h4>
     <%= (@challenge.reto_innovacion_url) if @challenge.reto_innovacion? %>
     <%= f.file_field :reto_innovacion %>
     <%= f.hidden_field :reto_innovacion_cache %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button button_red" %>
   </div>
 <% end %>

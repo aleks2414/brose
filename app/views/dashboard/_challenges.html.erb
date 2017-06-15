@@ -1,19 +1,19 @@
 <% @challengea.each do |challenge| %>
 
 <p>
-  <strong>Definicion:</strong>
+  <strong>Definición del cliente:</strong>
   <%= challenge.definicion %>
   <%= link_to "Descargar Definicion", challenge.definicion.url %>
 </p>
 
 <p>
-  <strong>Resumen:</strong>
+  <strong>Resumen de insights:</strong>
   <%= challenge.resumen %>
   <%= link_to "Descargar Resumen", challenge.resumen.url %>
 </p>
 
 <p>
-  <strong>Reto innovacion:</strong>
+  <strong>Reto de innovación:</strong>
   <%= challenge.reto_innovacion %>
   <%= link_to "Descargar Reto de Innovación", challenge.reto_innovacion.url %>
 </p>
