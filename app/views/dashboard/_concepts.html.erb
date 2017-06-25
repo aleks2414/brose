@@ -1,21 +1,21 @@
 <% @concepta.each do |concept| %>
 
 <p>
-  <strong>Entrevistas:</strong>
+  <strong>Propuesta de Valor preliminar:</strong>
   <%= concept.entrevistas %>
-  <%= link_to "Download Entrevistas", concept.entrevistas.url %>
+  <%= link_to "Descargar Propuesta de Valor Preliminar", concept.entrevistas.url %>
 </p>
 
 <p>
-  <strong>Propuesta:</strong>
+  <strong>Análisis Competitivo:</strong>
   <%= concept.propuesta %>
-  <%= link_to "Download Propuesta", concept.propuesta.url %>
+  <%= link_to "Descargar Análisis Competitivo", concept.propuesta.url %>
 </p>
 
 <p>
-  <strong>Boceto2:</strong>
+  <strong>Ajustes al concepto:</strong>
   <%= concept.boceto2 %>
-  <%= link_to "Download Boceto2", concept.boceto2.url %>
+  <%= link_to "Descargar Ajustes al concepto", concept.boceto2.url %>
 </p>
 
 

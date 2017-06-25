@@ -12,13 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :vpd %><br>
+    <%= f.label :Resumen_de_la_etapa %><br>
+    <h5>Subir un PDF, a modo de reporte, con el contenido de la herramienta “Lienzo de propuesta de valor”, el párrafo con el que se explica de manera contundente la propuesta, su prototipo, un resumen de las validaciones y, si hicieron ajustes, los ajustes y cómo queda la propuesta de valor evolucionada.</h5>
     <%= (@proposition.vpd) if @proposition.vpd? %>
     <%= f.file_field :vpd %>
     <%= f.hidden_field :vpd_cache %>
   </div>
   <div class="field">
     <%= f.label :video_pitch %><br>
+    <h5>Subir el link al video en YouTube.</h5>
     <%= f.text_field :video_pitch %>
   </div>
   <div class="actions">

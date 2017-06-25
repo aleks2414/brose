@@ -12,21 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :entrevistas %><br>
+    <%= f.label :Propuesta_de_valor_preliminar %><br>
+    <h5>Subir un PDF con el contenido del formato de resumen de la “propuesta de valor preliminar” y una descripción breve de los early adopters que entrevistaron.</h5>
     <%= (@concept.entrevistas_url) if @concept.entrevistas? %>
     <%= f.file_field :entrevistas %>
     <%= f.hidden_field :entrevistas_cache %>
   </div>
 
   <div class="field">
-    <%= f.label :propuesta %><br>
+    <%= f.label :Análisis_competitivo %><br>
+    <h5>Subir un PDF con el contenido de la investigación del análisis competitivo.</h5>
     <%= (@concept.propuesta_url) if @concept.propuesta? %>
     <%= f.file_field :propuesta %>
     <%= f.hidden_field :propuesta_cache %>
   </div>
 
   <div class="field">
-    <%= f.label :boceto2 %><br>
+    <%= f.label :Ajustes_al_concepto %><br>
+    <h5>Subir un PDF del Boceto de Idea con el resultado del replanteamiento del concepto de solución. Es necesario que comuniquen de manera explícita si, después de la validación, hicieron ajustes al concepto que tenían o si decidieron cambiarlo radicalmente. <br>Si decidieron cambiar radicalmente de idea, no es necesario que suban todos los formatos en las etapas anteriores, sin embargo, sí es necesario que hagan el proceso completo desde donde consideren necesario y lo manifiesten y compartan en el reporte que suban en este punto.</h5>
     <%= (@concept.boceto2_url) if @concept.boceto2? %>
     <%= f.file_field :boceto2 %>
     <%= f.hidden_field :boceto2_cache %>
