@@ -97,8 +97,7 @@
       @c = challenge.first_reviews.average(:q3).round(2)
       @d = challenge.first_reviews.average(:q4).round(2)
       @e = challenge.first_reviews.average(:q5).round(2)
-      @f = challenge.first_reviews.average(:q6).round(2)
-      @total = @a + @b + @c + @d + @e + @f
+      @total = @a + @b + @c + @d + @e
 
       @total %></h5>
 
@@ -141,10 +140,9 @@
 <h4>Número de calificaciones: <%= advantage.second_reviews.count %></h4>
 <h5>Calificación promedio
 
-  <%= @a = advantage.second_reviews.average(:q7).round(2) 
-      @b = advantage.second_reviews.average(:q8).round(2)
+  <%= @b = advantage.second_reviews.average(:q8).round(2)
       @c = advantage.second_reviews.average(:q9).round(2)
-      @total = @a + @b + @c
+      @total = @b + @c
 
       @total %></h5>
 

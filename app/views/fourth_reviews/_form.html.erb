@@ -12,16 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, '¿La propuesta de valor es verdaderamente atractiva para los usuarios/clientes?' %><br>
-    <%= f.number_field :q13 %>
+    <%= f.label :name, '¿La propuesta de valor cuenta con diferenciadores importantes?' %><br>
+    
+    <%= f.select :q13, [["La propuesta de valor tiene ventajas competitivas diferenciadoras evidentes y relevantes", 10], ["Las ventajas competitivas diferenciadoras no son tan relevantes", 5], ["La propuesta de valor no tiene ventajas competitivas diferenciadoras", 1]]%>
   </div>
   <div class="field">
-    <%= f.label :name, '¿La propuesta de valor cuenta con diferenciadores importantes?' %><br>
-    <%= f.number_field :q14 %>
+    <%= f.label :name, '¿La propuesta de valor es verdaderamente atractiva para los usuarios/clientes?' %><br>
+    
+    <%= f.select :q14, [["Las validaciones arrojaron que la propuesta de valor es verdaderamente atractiva para los clientes/usuarios", 10], ["Las validaciones arrojaron que la propuesta de valor es poco atractiva para los clientes/usuarios", 5], ["Las validaciones arrojaron que la propuesta de valor no es atractiva para los clientes/usuarios", 1]]%>
   </div>
   <div class="field">
     <%= f.label :name, '¿El pitch logra explicar de manera clara la solución y su idoneidad?' %><br>
-    <%= f.number_field :q15 %>
+    
+    <%= f.select :q15, [["El pitch comunica de manera clara el proceso, la propuesta de valor y sus diferenciadores", 10], ["El pitch comunica de manera deficiente el proceso, la propuesta de valor y/o sus diferenciadores", 5], ["El pitcho no comunica el proceso, la propuesta de valor y/o sus diferenciadores", 1]]%>
   </div>
   <div class="actions">
     <%= f.submit %>

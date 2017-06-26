@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, '¿La solución planteada para el reto es buena?' %><br>
-    <%= f.number_field :q7 %>
-  </div>
-  <div class="field">
     <%= f.label :name, '¿La solución tiene diferenciadores relevantes?' %><br>
-    <%= f.number_field :q8 %>
+    <%= f.select :q8, [["La solución tiene ventajas competitivas diferenciadoras evidentes y relevantes", 10], ["Las ventajas competitivas diferenciadoras no son tan relevantes", 5], ["La solución no tiene ventajas competitivas diferenciadoras", 1]]%>
   </div>
   <div class="field">
-    <%= f.label :name, '¿El video comunica de manera clara la solución y sus ventajas?' %><br>
-    <%= f.number_field :q9 %>
+    <%= f.label :name, '¿El prototipo comunica de manera clara la solución y sus ventajas?' %><br>
+    <%= f.select :q9, [["El prototipo comunica de manera clara la solución y sus ventajas", 10], ["El prototipo comunica medianamente la solución y/o sus ventajas", 5], ["El prototipo no comunica la solución y/o sus ventajas", 1]]%>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -11,28 +11,24 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :name, '¿Se ha logrado entender la problemática del cliente/usuario?' %><br>
-    <%= f.number_field :q1 %>
+    <%= f.label :name, '¿El cliente y usuario están bien definidos y entendidos?' %><br>
+    <%= f.select :q1, [["Existen razones contundentes para decir quién es el cliente y quién es el usuario", 10], ["Hay razones aunque difusas de quién es el cliente y quién el usuario", 5], ["No está claro quién es el cliente y quién es el usuario", 1]]%>
   </div>
   <div class="field">
-    <%= f.label :name, '¿El cliente y usuario están bien definidos y entendidos?' %><br>
-    <%= f.number_field :q2 %>
+    <%= f.label :name, '¿La problemática está bien entendida y es un tema relevante para el cliente?'%><br>
+        <%= f.select :q2, [["Está clara cuál es la problemática que quieren resolver y es relevante para el cliente", 10], ["La problemática no está clara o no arece ser relevante para el cliente/usuario", 5], ["No está clara cuál es la problemática que quieren resolver", 1]]%>
   </div>
   <div class="field">
     <%= f.label :name, '¿Se encontraron insights significativos?' %><br>
-    <%= f.number_field :q3 %>
+    <%= f.select :q3, [["Los insights encontrados fueron claves para entender el problema", 10], ["Los insights ayudaron poco a entender el problema", 5], ["Los insights elegidos no aportaron información relevante", 1]]%>
   </div>
   <div class="field">
     <%= f.label :name, '¿El reto de innovación está basado en insights?' %><br>
-    <%= f.number_field :q4 %>
+    <%= f.select :q4, [["El reto de innovación está basado en insights ", 10], ["El reto de innovación no está basado en insights", 1]]%>
   </div>
   <div class="field">
     <%= f.label :name, '¿El reto de innovación está escrito de manera correcta?' %><br>
-    <%= f.number_field :q5 %>
-  </div>
-  <div class="field">
-    <%= f.label :name, '¿El reto de innovación informa, inspira y llama a la acción?' %><br>
-    <%= f.number_field :q6 %>
+    <%= f.select :q5, [["El reto tiene la estructura correcta en su planteamiento", 10], ["El reto hace sentido pero no está escrito de manera correcta", 5], ["El reto no hace sentido y no está escrito correctamente", 1]]%>
   </div>
   <div class="actions">
     <%= f.submit %>

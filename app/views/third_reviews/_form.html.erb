@@ -13,15 +13,18 @@
 
   <div class="field">
     <%= f.label :name, '¿El concepto de solución sufrió ajustes significativos basados en retroalimentación verdadera?' %><br>
-    <%= f.number_field :q10 %>
+    
+    <%= f.select :q10, [["El concepto de solución se ajustó basada en retroalimentación valiosa", 10], ["El concepto de solución se ajustó pero no basado en retroalimentación ", 5], ["El concepto de solución no sufrió ajustes", 1]]%>
   </div>
   <div class="field">
     <%= f.label :name, '¿Se tomó en cuenta el análisis competitivo a la hora de plantear los ajustes?' %><br>
-    <%= f.number_field :q11 %>
+    
+    <%= f.select :q11, [["Los ajustes tomaron en cuenta el análisis competitivo", 10], ["Los ajustes no tomaron en cuenta el análisis competitivo", 1]]%>
   </div>
   <div class="field">
     <%= f.label :name, '¿La idea está plasmada de manera correcta en el Boceto?' %><br>
-    <%= f.number_field :q12 %>
+    
+    <%= f.select :q12, [["El boceto de idea expresa de manera clara y contundente todos los campos", 10], ["El boceto de idea tiene deficiencias a la hora de comunicar", 5], ["El boceto de idea no comunica correctamente el proyecto", 1]]%>
   </div>
   <div class="actions">
     <%= f.submit %>
