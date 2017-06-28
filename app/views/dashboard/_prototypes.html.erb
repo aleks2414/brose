@@ -1,6 +1,19 @@
 <% @prototypea.each do |prototype| %>
 
 <p>
+  <strong>Definición Producto Mínimo Viable:</strong>
+  <%= prototype.PMV %>
+  <%= link_to "Descargar Definición Producto Mínimo Viable", prototype.PMV.url %>
+</p>
+
+<p>
+  <strong>Resumen de Proyecto:</strong>
+  <%= prototype.resumen2 %>
+  <%= link_to "Descargar Resumen de Proyecto", prototype.resumen2.url %>
+</p>
+
+
+<p>
   <strong>Video pitch2:</strong>
   <%= prototype.video_pitch2 %>
 </p>

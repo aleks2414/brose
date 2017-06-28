@@ -12,8 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :video_pitch2 %><br>
-    <%= f.text_field :video_pitch2 %>
+    <%= f.label :Producto_mínimo_viable %><br>
+    <%= f.file_field :PMV %>
+    <%= f.hidden_field :PMV_cache %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Resumen_de_Proyecto %><br>
+    <%= f.file_field :resumen2 %>
+    <%= f.hidden_field :resumen2_cache %>
+  </div>
+
+  <div class="field">
+    <%= f.label :video_pitch_final %><br>
+    <%= f.url_field :video_pitch2 %>
   </div>
   <div class="actions">
     <%= f.submit %>

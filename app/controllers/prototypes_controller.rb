@@ -70,6 +70,6 @@ class PrototypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prototype_params
-      params.require(:prototype).permit(:video_pitch2, :team_id)
+      params.require(:prototype).permit(:video_pitch2, :team_id, :PMV, :resumen2)
     end
 end
