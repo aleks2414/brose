@@ -1,0 +1,2 @@
+module OneScoresHelper
+end

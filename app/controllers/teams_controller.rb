@@ -11,7 +11,13 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-
+    @one_score = @team.one_scores.new
+    @two_score = @team.two_scores.new
+    @three_score = @team.three_scores.new
+    @four_score = @team.four_scores.new
+    @five_score = @team.five_scores.new
+    @six_score = @team.six_scores.new
+    @seven_score = @team.seven_scores.new
 
   end
 

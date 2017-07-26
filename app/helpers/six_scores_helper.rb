@@ -1,0 +1,2 @@
+module SixScoresHelper
+end

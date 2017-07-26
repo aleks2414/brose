@@ -69,13 +69,13 @@
 <% @team.challenges.each do |challenge| %>
 
 <p>
-  <strong>Definicion:</strong>
+  <strong>Definicion del Cliente:</strong>
   <%= challenge.definicion %>
   <%= link_to "Descargar Definicion", challenge.definicion.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
-  <strong>Resumen:</strong>
+  <strong>Resumen de Insights:</strong>
   <%= challenge.resumen %>
   <%= link_to "Descargar Resumen", challenge.resumen.url, class: "button button_grey button_block" %>
 </p>
@@ -86,30 +86,46 @@
   <%= link_to "Descargar Reto de Innovación", challenge.reto_innovacion.url, class: "button button_grey button_block" %>
 </p>
 
-<br><h5 class="red upper center">Calificación</h5>
+
+<% end %>
 <hr>
-<% if challenge.first_reviews.present? %>
-<h4>Número de calificaciones: <%= challenge.first_reviews.count %></h4>
-<h5>Calificación promedio
+</div>
 
-  <%= @a = challenge.first_reviews.average(:q1).round(2) 
-      @b = challenge.first_reviews.average(:q2).round(2)
-      @c = challenge.first_reviews.average(:q3).round(2)
-      @d = challenge.first_reviews.average(:q4).round(2)
-      @e = challenge.first_reviews.average(:q5).round(2)
-      @total = @a + @b + @c + @d + @e
+<div id="cuadro">
+<h4 class="red upper">Calificaciones Primera Etapa</h4>
 
-      @total %></h5>
+<%= form_for [@team, @one_score], :html => {:id => 'one_form'} do |f| %>
 
+<div class="field">
+    <%= f.label :name, '¿El cliente y usuario están bien definidos y entendidos?' %><br>
+    <%= f.select :r1, [["Existen razones contundentes para decir quién es el cliente y quién es el usuario", 10], ["Hay razones aunque difusas de quién es el cliente y quién el usuario", 5], ["No está claro quién es el cliente y quién es el usuario", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿La problemática está bien entendida y es un tema relevante para el cliente?'%><br>
+        <%= f.select :r2, [["Está clara cuál es la problemática que quieren resolver y es relevante para el cliente", 10], ["La problemática no está clara o no arece ser relevante para el cliente/usuario", 5], ["No está clara cuál es la problemática que quieren resolver", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿Se encontraron insights significativos?' %><br>
+    <%= f.select :r3, [["Los insights encontrados fueron claves para entender el problema", 10], ["Los insights ayudaron poco a entender el problema", 5], ["Los insights elegidos no aportaron información relevante", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿El reto de innovación está basado en insights?' %><br>
+    <%= f.select :r4, [["El reto de innovación está basado en insights ", 10], ["El reto de innovación no está basado en insights", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿El reto de innovación está escrito de manera correcta?' %><br>
+    <%= f.select :r5, [["El reto tiene la estructura correcta en su planteamiento", 10], ["El reto hace sentido pero no está escrito de manera correcta", 5], ["El reto no hace sentido y no está escrito correctamente", 1]]%>
+  </div>
 
-<%= link_to 'New Review', new_challenge_first_review_path(challenge, @first_review), :class => "btn btn-info" %>
+  <div class="actions">
+    <%= f.submit class: "button button_red" %>
+  </div>
 
-<% else %>
-
-<%= link_to 'New Review', new_challenge_first_review_path(challenge, @first_review), :class => "btn btn-info" %>
 <% end %>
 
-<% end %>
+<h3>Calificación:</h3>
+<h3> <%= @team.one_score_r1 %> (<%= @team.one_scores.count%>) </h3>
+
 
 </div>
 
@@ -122,37 +138,46 @@
 <% @team.advantages.each do |advantage| %>
 
 <p>
-  <strong>Boceto:</strong>
+  <strong>Proceso General:</strong>
   <%= advantage.boceto %>
-  <%= link_to "Descargar Boceto 1", advantage.boceto.url, class: "button button_grey button_block" %>
+  <%= link_to "Descargar Proceso General", advantage.boceto.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
-  <strong>Infografia:</strong>
+  <strong>Prototipo Conceptual:</strong>
   <%= advantage.infografia %>
-  <%= link_to "Descargar Infografía", advantage.infografia.url, class: "button button_grey button_block" %>
+  <%= link_to "Descargar Prototipo Conceptual", advantage.infografia.url, class: "button button_grey button_block" %>
 </p>
 
-<br><h5 class="red upper center">Calificación</h5>
+
+<% end %>
+
 <hr>
-<% if advantage.second_reviews.present? %>
 
-<h4>Número de calificaciones: <%= advantage.second_reviews.count %></h4>
-<h5>Calificación promedio
+</div>
 
-  <%= @b = advantage.second_reviews.average(:q8).round(2)
-      @c = advantage.second_reviews.average(:q9).round(2)
-      @total = @b + @c
+<div id="cuadro">
+  <h4 class="red upper">Calificaciones Segunda Etapa</h4>
 
-      @total %></h5>
+<%= form_for [@team, @two_score], :html => {:id => 'two_form'} do |f| %>
 
-<%= link_to 'New Review', new_advantage_second_review_path(advantage, @second_review), :class => "btn btn-info" %>
+  <div class="field">
+    <%= f.label :name, '¿La solución tiene diferenciadores relevantes?' %><br>
+    <%= f.select :r1, [["La solución tiene ventajas competitivas diferenciadoras evidentes y relevantes", 10], ["Las ventajas competitivas diferenciadoras no son tan relevantes", 5], ["La solución no tiene ventajas competitivas diferenciadoras", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿El prototipo comunica de manera clara la solución y sus ventajas?' %><br>
+    <%= f.select :r2, [["El prototipo comunica de manera clara la solución y sus ventajas", 10], ["El prototipo comunica medianamente la solución y/o sus ventajas", 5], ["El prototipo no comunica la solución y/o sus ventajas", 1]]%>
+  </div>
 
-<% else %>
-<%= link_to 'New Review', new_advantage_second_review_path(advantage, @second_review), :class => "btn btn-info" %>
+  <div class="actions">
+    <%= f.submit class: "button button_red" %>
+  </div>
+
 <% end %>
 
-<% end %>
+<h3>Calificación:</h3>
+<h3> <%= @team.two_score_r1 %> (<%= @team.two_scores.count%>) </h3>
 
 </div>
 
@@ -164,45 +189,59 @@
 
 <% @team.concepts.each do |concept| %>
 <p>
-  <strong>Entrevistas:</strong>
+  <strong>Propuesta de Valor Preliminar:</strong>
   <%= concept.entrevistas %>
-  <%= link_to "Descargar Entrevistas", concept.entrevistas.url, class: "button button_grey button_block" %>
+  <%= link_to "Descargar Propuesta de Valor Preliminar", concept.entrevistas.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
-  <strong>Propuesta:</strong>
+  <strong>Análisis Competitivo:</strong>
   <%= concept.propuesta %>
-  <%= link_to "Descargar Propuesta", concept.propuesta.url, class: "button button_grey button_block" %>
+  <%= link_to "Descargar Análisis Competitivo", concept.propuesta.url, class: "button button_grey button_block" %>
 </p>
 
 <p>
-  <strong>Boceto2:</strong>
+  <strong>Ajustes al Concepto:</strong>
   <%= concept.boceto2 %>
-  <%= link_to "Descargar Boceto 2", concept.boceto2.url, class: "button button_grey button_block" %>
+  <%= link_to "Descargar Ajustes al Concepto", concept.boceto2.url, class: "button button_grey button_block" %>
 </p>
 
-<br><h5 class="red upper center">Calificación</h5>
+
+<% end %>
+
 <hr>
-<% if concept.third_reviews.present? %>
+</div>
 
-<h4>Número de calificaciones: <%= concept.third_reviews.count %></h4>
-<h5>Calificación promedio
+<div id="cuadro">
+  <h4 class="red upper">Calificaciones Tercera Etapa</h4>
 
-  <%= @a = concept.third_reviews.average(:q10).round(2) 
-      @b = concept.third_reviews.average(:q11).round(2)
-      @c = concept.third_reviews.average(:q12).round(2)
-      @total = @a + @b + @c
+<%= form_for [@team, @three_score], :html => {:id => 'three_form'} do |f| %>
 
-      @total %></h5>
+  <div class="field">
+    <%= f.label :name, '¿El concepto de solución sufrió ajustes significativos basados en retroalimentación verdadera?' %><br>
+    
+    <%= f.select :r1, [["El concepto de solución se ajustó basada en retroalimentación valiosa", 10], ["El concepto de solución se ajustó pero no basado en retroalimentación ", 5], ["El concepto de solución no sufrió ajustes", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿Se tomó en cuenta el análisis competitivo a la hora de plantear los ajustes?' %><br>
+    
+    <%= f.select :r2, [["Los ajustes tomaron en cuenta el análisis competitivo", 10], ["Los ajustes no tomaron en cuenta el análisis competitivo", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿La idea está plasmada de manera correcta en el Boceto?' %><br>
+    
+    <%= f.select :r3, [["El boceto de idea expresa de manera clara y contundente todos los campos", 10], ["El boceto de idea tiene deficiencias a la hora de comunicar", 5], ["El boceto de idea no comunica correctamente el proyecto", 1]]%>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit class: "button button_red" %>
+  </div>
 
-<%= link_to 'New Review', new_concept_third_review_path(concept, @third_review), :class => "btn btn-info" %>
-
-<% else %>
-<%= link_to 'New Review', new_concept_third_review_path(concept, @third_review), :class => "btn btn-info" %>
 <% end %>
 
+<h3>Calificación:</h3>
+<h3> <%= @team.three_score_r1 %> (<%= @team.three_scores.count%>) </h3>
 
-<% end %>
 </div>
 
 
@@ -213,9 +252,9 @@
 <% @team.propositions.each do |proposition| %>
 
 <p>
-  <strong>Vpd:</strong>
+  <strong>Resumen de la etapa:</strong>
   <%= proposition.vpd %>
-  <%= link_to "Descargar Value proposition Design", proposition.vpd.url , class: "button button_grey button_block"%>
+  <%= link_to "Descargar Resumen de la etapa", proposition.vpd.url , class: "button button_grey button_block"%>
 </p>
 
 <p>
@@ -223,63 +262,293 @@
   <%= proposition.video_pitch %>
 </p>
 
-<br><h5 class="red upper center">Calificación</h5>
+
+
+<% end %>
+
 <hr>
-<% if proposition.fourth_reviews.present? %>
+</div>
 
-<h4>Número de calificaciones: <%= proposition.fourth_reviews.count %></h4>
-<h5>Calificación promedio
+<div id="cuadro">
+  <h4 class="red upper">Calificaciones Cuarta Etapa</h4>
 
-  <%= @a = proposition.fourth_reviews.average(:q13).round(2) 
-      @b = proposition.fourth_reviews.average(:q14).round(2)
-      @c = proposition.fourth_reviews.average(:q15).round(2)
-      @total = @a + @b + @c
+<%= form_for [@team, @four_score], :html => {:id => 'four_form'} do |f| %>
 
-      @total %></h5>
+<div class="field">
+    <%= f.label :name, '¿La propuesta de valor cuenta con diferenciadores importantes?' %><br>
+    
+    <%= f.select :r1, [["La propuesta de valor tiene ventajas competitivas diferenciadoras evidentes y relevantes", 10], ["Las ventajas competitivas diferenciadoras no son tan relevantes", 5], ["La propuesta de valor no tiene ventajas competitivas diferenciadoras", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿La propuesta de valor es verdaderamente atractiva para los usuarios/clientes?' %><br>
+    
+    <%= f.select :r2, [["Las validaciones arrojaron que la propuesta de valor es verdaderamente atractiva para los clientes/usuarios", 10], ["Las validaciones arrojaron que la propuesta de valor es poco atractiva para los clientes/usuarios", 5], ["Las validaciones arrojaron que la propuesta de valor no es atractiva para los clientes/usuarios", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿El pitch logra explicar de manera clara la solución y su idoneidad?' %><br>
+    
+    <%= f.select :r3, [["El pitch comunica de manera clara el proceso, la propuesta de valor y sus diferenciadores", 10], ["El pitch comunica de manera deficiente el proceso, la propuesta de valor y/o sus diferenciadores", 5], ["El pitcho no comunica el proceso, la propuesta de valor y/o sus diferenciadores", 1]]%>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit class: "button button_red" %>
+  </div>
 
-<%= link_to 'New Review', new_proposition_fourth_review_path(proposition, @fourth_review), :class => "btn btn-info" %>
-
-<% else %>
-<%= link_to 'New Review', new_proposition_fourth_review_path(proposition, @fourth_review), :class => "btn btn-info" %>
 <% end %>
 
-
-<% end %>
+<h3>Calificación:</h3>
+<h3> <%= @team.four_score_r1 %> (<%= @team.four_scores.count%>) </h3>
 
 </div>
 
 
-<!-- <div id="cuadro">
+<div id="cuadro">
+<h3 class= "center upper red"> Primer Pitch</h3>
+<hr>
+  <h4 class="red upper">Filtrado</h4>
+
+<%= form_for [@team, @six_score], :html => {:id => 'six_form'} do |f| %>
+
+  <div class="field">
+     <%= f.label :name, 'Se explica de manera clara el problema detectado exponiendo con datos como es que este no favorece a las necesidades de la planta.' %><br>
+    <%= f.select :r1, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'El proyecto resolverá una vertiente particular del problema para convertirlo en un reto. (problema acotado y enfocado de forma particular)' %><br>
+    <%= f.select :r2, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Se identifica claramente cuál es el cliente/usuario particular que se beneficia principalmente con la solución del reto planteado.' %><br>
+    <%= f.select :r3, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Se explica de una forma clara y concisa el concepto con el cual se atiende el reto.' %><br>
+    <%= f.select :r4, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Evidencias de la validación del concepto.' %><br>
+    <%= f.select :r5, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Se explica de una forma clara y articulada cuál es la propuesta de valor señalando con detalle los beneficios para los usuarios.' %><br>
+    <%= f.select :r6, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Se evidencia de una forma clara y correcta cuáles son las ventajas competitivas de la propuesta.' %><br>
+    <%= f.select :r7, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Plantea una diferencia significativa en relación con el sector.' %><br>
+    <%= f.select :r8, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Presenta de forma creativa un cambio significativo para mejorar una tecnología, producto, proceso, servicio o crear uno nuevo.' %><br>
+    <%= f.select :r9, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Establece procedimientos para su sistematización.' %><br>
+    <%= f.select :r10, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Propone una alternativa al alcance de las posibilidades de Brose.' %><br>
+    <%= f.select :r11, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Establece procedimientos para su sistematización.' %><br>
+    <%= f.select :r12, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Rentabilidad del proyecto.' %><br>
+    <%= f.select :r13, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Análisis costo beneficio.' %><br>
+    <%= f.select :r14, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit class: "button button_red" %>
+  </div>
+
+<% end %>
+
+<h3>Calificación:</h3>
+<h3> <%= @team.six_score_r1 %> (<%= @team.six_scores.count%>) </h3>
+
+
+</div>
+
+<div id="cuadro">
+  <h3 class= "center upper red"> Resultados de Selección </h3>
+<hr>
+<h4>Calificación de herramientas:</h4>
+<h4> <%= @team.calificacion_de_filtrado %></h4> <br>
+
+<h4>Calificación de Pitch:</h4>
+<h4> <%= @team.six_score_r1 %></h4>
+
+</div>
+
+
+<div id="cuadro">
 <h3 class= "center upper red"> Etapa 5</h3>
 <hr>
 	<h4 class="red upper">Prototipado</h4>
 
-<%# @team.prototypes.each do |prototype| %>
+<% @team.prototypes.each do |prototype| %>
 
 <p>
-  <strong>Video pitch2:</strong>
-  <%#= prototype.video_pitch2 %>
+  <strong>Producto Mínimo Viable:</strong>
+  <%= prototype.PMV %>
+  <%= link_to "Descargar Producto Mínimo Viable", prototype.PMV.url , class: "button button_grey button_block"%>
 </p>
 
-<br><h5 class="red upper center">Calificación</h5>
+<p>
+  <strong>Resumen de Proyecto:</strong>
+  <%= prototype.resumen2 %>
+  <%= link_to "Descargar Resumen del Proyecto", prototype.resumen2.url , class: "button button_grey button_block"%>
+</p>
+
+
+<p>
+  <strong>Video pitch Final:</strong>
+  <%= prototype.video_pitch2 %>
+</p>
+
+
+<% end %>
+
 <hr>
-<%# if prototype.fifth_reviews.present? %>
 
-<h4>Número de calificaciones: <%#= prototype.fifth_reviews.count %></h4>
-<h5>Calificación promedio
+</div>
 
-  <%#= @a = prototype.fifth_reviews.average(:q16).round(2) 
-      @total = @a
+<div id="cuadro">
+  <h4 class="red upper">Calificaciones</h4>
 
-      @total %></h5>
+<%= form_for [@team, @five_score], :html => {:id => 'five_form'} do |f| %>
 
-<%#= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
-<%# else %>
-<%#= link_to 'New Review', new_prototype_fifth_review_path(prototype, @fifth_review), :class => "btn btn-info" %>
-<%# end %>
+  <div class="field">
+    <%= f.label :name, '¿El prototipo cumple con los requisitos de funcionalidad?' %><br>
+    <%= f.select :r1, [["El prototipo resuelve de buena manera los retos de funcionalidad.", 10], ["El prototipo resuelve medianamente los retos de funcionalidad.", 5], ["El prototipo no resuelve los retos de funcionalidad.", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿El valor generado para el cliente es grande?' %><br>
+    <%= f.select :r2, [["El valor generado para el cliente es lo suficientemente grande y atractivo para implementarlo", 10], ["El valor generado para el cliente es apenas atractivo como para implementarlo", 5], ["El valor generado para el cliente no es atractivo como para implementarlo", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿El impacto que traerá a la empresa vale la pena?' %><br>
+    <%= f.select :r3, [["El impacto que traerá a la empresa es muy atractivo", 10], ["El impacto que traerá a la empresa apenas es atractivo", 5], ["El impacto que traerá a la empresa no es evidente", 1]]%>
+  </div>
+  <div class="field">
+    <%= f.label :name, '¿El pitch explica el proyecto y sus pasos de forma clara?' %><br>
+    <%= f.select :r4, [["El pitch comunica de manera clara el proceso, la propuesta de valor y sus diferenciadores y el desarrollo de prototipo e implementación", 10], ["El pitch comunica de manera deficiente el proceso, la propuesta de valor, sus diferenciadores y/o el desarrollo de prototipo e implementación", 5], ["El pitch no comunica el proceso, la propuesta de valor, sus diferenciadores y/o el desarrollo de prototipo e implementación", 1]]%>
+  </div>
 
-<%# end %>
-</div> -->
+
+  <div class="actions">
+    <%= f.submit class: "button button_red" %>
+  </div>
+
+<% end %>
+
+<h3>Calificación:</h3>
+<h3> <%= @team.five_score_r1 %> (<%= @team.five_scores.count%>) </h3>
+
+</div>
+
+
+
+
+
+
+<div id="cuadro">
+  <h3 class= "center upper red"> Final Pitch </h3>
+<hr>
+
+<%= form_for [@team, @seven_score], :html => {:id => 'seven_form'} do |f| %>
+
+  <div class="field">
+     <%= f.label :name, 'Utiliza métodos cuantitativos y/o cualitativos para el análisis e interpretación de los resultados mediante tablas y gráficas.' %><br>
+    <%= f.select :r1, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Presenta orden en la redacción y secuencia lógica en las ideas planteadas.' %><br>
+    <%= f.select :r2, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Maneja el rechazo o aceptación de la hipótesis e interpretación de los resultados. ' %><br>
+    <%= f.select :r3, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'El prototipo diseñado es funcional y cumple con el objetivo planteado.' %><br>
+    <%= f.select :r4, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Diseña empleando e integrando diversidad de tecnologías. (Didácticas, mecánicas, de softwere, eléctricas, electrónicas, de diseño según la modalidad)' %><br>
+    <%= f.select :r5, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Presenta elementos para registro de propiedad industrial (propiedad intelectual, diseño industrial, invención o modelo de utilidad patentable), derecho de autor o secreto industrial.' %><br>
+    <%= f.select :r6, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Exponer de manera clara y congruente a lo presentado en la memoria técnica.' %><br>
+    <%= f.select :r7, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Utiliza un lenguaje técnico-científico correcto y congruente con el proyecto.' %><br>
+    <%= f.select :r8, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+  <div class="field">
+     <%= f.label :name, 'Presenta una bitácora donde detalla el desarrollo del proyecto.' %><br>
+    <%= f.select :r9, [[5], [4], [3], [2], [1]]%>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit class: "button button_red" %>
+  </div>
+
+<% end %>
+
+<h3>Calificación:</h3>
+<h3> <%= @team.seven_score_r1 %> (<%= @team.seven_scores.count%>) </h3>
+
+</div>
+
+<div id="cuadro">
+  <h3 class= "center upper red"> Resultados Finales </h3>
+<hr>
+
+<h4>Calificación de 5a Etapa:</h4>
+<h4> <%= @team.five_score_r1 %></h4> <br>
+
+<h4>Calificación de 5a Etapa:</h4>
+<h4> <%= @team.seven_score_r1 %></h4>
+
+</div>
 
 
 <%= link_to 'Back', teams_path %>

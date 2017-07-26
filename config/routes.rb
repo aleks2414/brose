@@ -1,30 +1,23 @@
 Rails.application.routes.draw do
   
-  resources :prototypes do
-    resources :fifth_reviews
-  end
-
-
-  resources :propositions do
-    resources :fourth_reviews
-  end
-
-
-  resources :concepts do
-    resources :third_reviews
-  end
-
-
-  resources :advantages do
-    resources :second_reviews
-  end
-
-  resources :challenges do
-    resources :first_reviews
-  end
+  
+  resources :prototypes     
+  resources :propositions     
+  resources :concepts     
+  resources :advantages     
+  resources :challenges     
   
   devise_for :teams
-  resources :teams
+  
+  resources :teams do
+    resources :three_scores
+    resources :one_scores
+    resources :seven_scores
+    resources :six_scores
+    resources :five_scores
+    resources :four_scores
+    resources :two_scores
+  end
   resources :players
   resources :capitans
 

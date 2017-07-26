@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628005933) do
+ActiveRecord::Schema.define(version: 20170726025706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,30 @@ ActiveRecord::Schema.define(version: 20170628005933) do
   add_index "first_reviews", ["challenge_id"], name: "index_first_reviews_on_challenge_id", using: :btree
   add_index "first_reviews", ["team_id"], name: "index_first_reviews_on_team_id", using: :btree
 
+  create_table "five_scores", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "r1",         default: 0
+    t.integer  "r2",         default: 0
+    t.integer  "r3",         default: 0
+    t.integer  "r4",         default: 0
+    t.integer  "r5",         default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "five_scores", ["team_id"], name: "index_five_scores_on_team_id", using: :btree
+
+  create_table "four_scores", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "r1",         default: 0
+    t.integer  "r2",         default: 0
+    t.integer  "r3",         default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "four_scores", ["team_id"], name: "index_four_scores_on_team_id", using: :btree
+
   create_table "fourth_reviews", force: :cascade do |t|
     t.integer  "proposition_id"
     t.integer  "team_id"
@@ -103,6 +127,20 @@ ActiveRecord::Schema.define(version: 20170628005933) do
 
   add_index "fourth_reviews", ["proposition_id"], name: "index_fourth_reviews_on_proposition_id", using: :btree
   add_index "fourth_reviews", ["team_id"], name: "index_fourth_reviews_on_team_id", using: :btree
+
+  create_table "one_scores", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "r1",         default: 0
+    t.integer  "r2",         default: 0
+    t.integer  "r3",         default: 0
+    t.integer  "r4",         default: 0
+    t.integer  "r5",         default: 0
+    t.integer  "r6",         default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "one_scores", ["team_id"], name: "index_one_scores_on_team_id", using: :btree
 
   create_table "players", force: :cascade do |t|
     t.string   "nombre"
@@ -164,6 +202,45 @@ ActiveRecord::Schema.define(version: 20170628005933) do
   add_index "second_reviews", ["advantage_id"], name: "index_second_reviews_on_advantage_id", using: :btree
   add_index "second_reviews", ["team_id"], name: "index_second_reviews_on_team_id", using: :btree
 
+  create_table "seven_scores", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "r1",         default: 0
+    t.integer  "r2",         default: 0
+    t.integer  "r3",         default: 0
+    t.integer  "r4",         default: 0
+    t.integer  "r5",         default: 0
+    t.integer  "r6",         default: 0
+    t.integer  "r7",         default: 0
+    t.integer  "r8",         default: 0
+    t.integer  "r9",         default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "seven_scores", ["team_id"], name: "index_seven_scores_on_team_id", using: :btree
+
+  create_table "six_scores", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "r1",         default: 0
+    t.integer  "r2",         default: 0
+    t.integer  "r3",         default: 0
+    t.integer  "r4",         default: 0
+    t.integer  "r5",         default: 0
+    t.integer  "r6",         default: 0
+    t.integer  "r7",         default: 0
+    t.integer  "r8",         default: 0
+    t.integer  "r9",         default: 0
+    t.integer  "r10",        default: 0
+    t.integer  "r11",        default: 0
+    t.integer  "r12",        default: 0
+    t.integer  "r13",        default: 0
+    t.integer  "r14",        default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "six_scores", ["team_id"], name: "index_six_scores_on_team_id", using: :btree
+
   create_table "teams", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -196,6 +273,28 @@ ActiveRecord::Schema.define(version: 20170628005933) do
   add_index "third_reviews", ["concept_id"], name: "index_third_reviews_on_concept_id", using: :btree
   add_index "third_reviews", ["team_id"], name: "index_third_reviews_on_team_id", using: :btree
 
+  create_table "three_scores", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "r1",         default: 0
+    t.integer  "r2",         default: 0
+    t.integer  "r3",         default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "three_scores", ["team_id"], name: "index_three_scores_on_team_id", using: :btree
+
+  create_table "two_scores", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "r1",         default: 0
+    t.integer  "r2",         default: 0
+    t.integer  "r3",         default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "two_scores", ["team_id"], name: "index_two_scores_on_team_id", using: :btree
+
   add_foreign_key "advantages", "teams"
   add_foreign_key "capitans", "teams"
   add_foreign_key "challenges", "teams"
@@ -204,14 +303,21 @@ ActiveRecord::Schema.define(version: 20170628005933) do
   add_foreign_key "fifth_reviews", "teams"
   add_foreign_key "first_reviews", "challenges"
   add_foreign_key "first_reviews", "teams"
+  add_foreign_key "five_scores", "teams"
+  add_foreign_key "four_scores", "teams"
   add_foreign_key "fourth_reviews", "propositions"
   add_foreign_key "fourth_reviews", "teams"
+  add_foreign_key "one_scores", "teams"
   add_foreign_key "players", "teams"
   add_foreign_key "projects", "teams"
   add_foreign_key "propositions", "teams"
   add_foreign_key "prototypes", "teams"
   add_foreign_key "second_reviews", "advantages"
   add_foreign_key "second_reviews", "teams"
+  add_foreign_key "seven_scores", "teams"
+  add_foreign_key "six_scores", "teams"
   add_foreign_key "third_reviews", "concepts"
   add_foreign_key "third_reviews", "teams"
+  add_foreign_key "three_scores", "teams"
+  add_foreign_key "two_scores", "teams"
 end
