@@ -1,14 +1,20 @@
-
-
+<div class="row">
 <% @teams.each do |team| %>
 
+<div class="col-md-4">
+<div id="calis">
 <%= link_to team do %>
-
-<div id="nuevo">	
 <h1>Equipo # <%= team.id %></h1>
+<h5>Cal. Herramientas <strong><%= team.calificacion_de_filtrado %></strong></h5>
+<h5>Cal. 1er Pitch <strong><%= team.six_score_r1 %></strong></h5>
+<h3>Pre-evaluation: <strong><%= team.calificacion_de_filtrado + team.six_score_r1 %></strong></h3> <br>
+<h5>Cal. Etapa 5 <strong><%= team.five_score_r1 %></strong></h5>
+<h5>Cal Pitch Final <strong><%= team.seven_score_r1 %></strong></h5>
+<h3>Final Evaluation: <strong><%= team.five_score_r1 + team.seven_score_r1 %></strong></h3> <br>
+<% end %>
+</div>
 </div>
 
 <% end %>
-
-<% end %>
+</div>
 
