@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.where(admin: false).order("id desc")
+    
 
   end
 
